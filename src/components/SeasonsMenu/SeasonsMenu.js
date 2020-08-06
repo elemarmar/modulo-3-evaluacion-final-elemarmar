@@ -1,8 +1,9 @@
 import React from 'react';
 
+import Season from './Season/Season';
 const SeasonsMenu = (props) => {
 
-    return <p>SeasonsMenu</p>
+    return (<Season />);
 };
 
 

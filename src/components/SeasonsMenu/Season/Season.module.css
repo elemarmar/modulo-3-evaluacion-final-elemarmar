@@ -1,0 +1,33 @@
+.Season {
+    height: 200px;
+    border: solid 2px red;
+    position: relative;
+}
+
+.Season:hover::before {
+    content: '';
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: solid 3px blue;
+    z-index: 2;
+    background-color: rgba(0,0,0, .5);
+    cursor: pointer;
+}
+
+.Season h2 {
+    position: absolute;
+    left: 40px;
+    font-size: 50px;
+    color: white;
+    z-index: 3;
+}
+
+.SeasonVideo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
