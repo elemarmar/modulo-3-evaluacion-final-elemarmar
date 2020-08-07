@@ -1,0 +1,16 @@
+.Title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: solid 3px red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: auto;
+}
+.Title img {
+    border: solid 2px blue;
+    width: 100%;
+}
