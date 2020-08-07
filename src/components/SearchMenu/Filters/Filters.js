@@ -1,4 +1,6 @@
 import React from 'react';
+import FilterByName from './FilterByName/FilterByName';
+import classes from './Filters.module.css';
 
 const Filters = (props) => {
     const handleInput = (ev) => {
@@ -9,8 +11,8 @@ const Filters = (props) => {
     }
 
     return (
-            <form>
-                <input type="text" onChange={handleInput}/>
+            <form className={classes.Filters}>
+                <FilterByName handleFilter={props.handleFilter} nameFilter={props.nameFilter}/>
             </form>
     )
 }

@@ -14,7 +14,8 @@ const SearchMenu = (props) => {
         <div id="stars3"></div>
         <section className={classes.SearchMenu}>
             <h1 className={classes.Title}><img src={Title}/></h1>
-            <Filters />
+            <h2>Season 4</h2>
+            <Filters handleFilter={props.handleFilter} nameFilter={props.nameFilter}/>
             <CharacterList charactersData={props.charactersData}/>
         </section>
     </>

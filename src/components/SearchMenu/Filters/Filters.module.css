@@ -1,0 +1,7 @@
+.Filters {
+    border: solid 2px purple;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    
+}

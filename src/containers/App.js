@@ -3,28 +3,37 @@ import { Route, Link, Switch } from 'react-router-dom';
 import Landing from '../components/Landing/Landing'
 import Search from '../components/SearchMenu/SearchMenu'
 import SeasonsMenu from '../components/SeasonsMenu/SeasonsMenu';
-import getDataFromApi from '../services/getDataFromApi';
+import Api from '../services/getDataFromApi';
 import './App.css';
 
 function App() {
-  const [showCharacters, setShowCharacters] = useState('');
+  const [characters, setCharacters] = useState('');
+  const [nameFilter, setNameFilter] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getDataFromApi()
-      .then(data => setShowCharacters(data))
-      .then(() => setLoading(false));
-  }, []);
+    if (nameFilter) {
+      Api.name(nameFilter.toLowerCase())
+      .then(data => setCharacters(data))
+      .then(() => {
+        setLoading(false)});
+    } else {
+        Api.all()
+        .then(data => setCharacters(data))
+        .then(() => setLoading(false));
+    }
+  }, [nameFilter]);
 
 
+  
 const handleFilter = (data) => {
- console.log(data);
+  setNameFilter(data.value);
 }
 
   return (
     <>
       <Switch>
-        <Route path="/search" render={() => <Search charactersData={showCharacters}/>} />
+        <Route path="/search" render={() => <Search charactersData={characters} handleFilter={handleFilter} nameFilter={nameFilter}/>} />
         <Route path="/seasons" component={SeasonsMenu} />
         <Route path="/" component={Landing} />
       </Switch>

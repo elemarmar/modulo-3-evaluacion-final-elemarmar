@@ -1,5 +1,5 @@
 .CharacterList {
-    margin: 300px 30px;
+    margin: 30px 30px;
     border: solid 1px red;
     display: flex;
     flex-wrap: wrap;

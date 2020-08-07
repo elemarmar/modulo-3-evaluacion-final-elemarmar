@@ -7,7 +7,6 @@ const randomN = () => {
 
 console.log(randomN());
 const CharacterCard = (props) => {
-    console.log(props.pic);
     const divStyle = {
         backgroundImage: 'url(' + props.pic + ')',
         animationDelay: randomN() + 's',
