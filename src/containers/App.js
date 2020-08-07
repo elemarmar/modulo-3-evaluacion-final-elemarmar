@@ -17,7 +17,9 @@ function App() {
   }, []);
 
 
-
+const handleFilter = (data) => {
+ console.log(data);
+}
 
   return (
     <>

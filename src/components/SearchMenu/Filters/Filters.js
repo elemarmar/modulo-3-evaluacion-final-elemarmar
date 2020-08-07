@@ -2,7 +2,10 @@ import React from 'react';
 
 const Filters = (props) => {
     const handleInput = (ev) => {
-        console.log(ev.target.value);
+        props.handleFilter({
+            value: ev.target.value,
+            key: 'name'
+          });
     }
 
     return (
