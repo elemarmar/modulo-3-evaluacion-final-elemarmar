@@ -1,12 +1,22 @@
 import React from 'react';
 import classes from './CharacterCard.module.css';
 
+const randomN = () => {
+    return Math.random();
+}
+
+console.log(randomN());
 const CharacterCard = (props) => {
+    console.log(props.pic);
+    const divStyle = {
+        backgroundImage: 'url(' + props.pic + ')',
+        animationDelay: randomN() + 's',
+    }
 
     return (
-        <article className={classes.CharacterCard}>
+        <article style={divStyle} className={classes.CharacterCard}>
             <span className={classes.CharacterPic}></span>
-            <h4>Morty Sánchez</h4>
+            <h4>{props.name}</h4>
         </article>
     );
 };
