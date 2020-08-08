@@ -27,14 +27,42 @@
 
 .LandingTv {
   position: absolute;
-  left: 50.3%;
+  left: 50%;
   top: 230px;
   transform: translateX(-50%);
   height: 255px;
-  width: 450px;
-  border: solid 2px orange;
-  z-index: -1;
-  animation-name: changeTvChannels;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
+  width: 460px;
+  z-index: 1;
+  background-image: url('../../assets/gifs/tv-video.gif');
+  background-size: contain;
+  background-position: center;
+}
+
+.LandingTv::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 255px;
+  width: 460px;
+  content: '';
+  z-index: 9;
+}
+
+.LandingTv:hover::after {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.LandingTv:hover::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  content: 'Go';
+  color: white;
+  font-size: 33px;
+  cursor: pointer;
+  z-index: 10;
 }
