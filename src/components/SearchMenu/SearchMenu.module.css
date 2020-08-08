@@ -1,16 +1,23 @@
 .Title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    border: solid 3px red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: solid 3px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  margin: auto;
 }
 .Title img {
-    border: solid 2px blue;
-    width: 100%;
+  border: solid 2px blue;
+  width: 100%;
+}
+
+.SeasonTitle {
+  width: 200px;
+  margin: 180px auto 0 auto;
+  color: rgba(255, 255, 255, 0.733);
+  text-align: center;
 }

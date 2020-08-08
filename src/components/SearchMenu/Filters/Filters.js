@@ -28,7 +28,10 @@ const Filters = (props) => {
         handleFilter={props.handleFilter}
         speciesFilter={props.speciesFilter}
       />
-      <FilterByStatus handleFilter={props.handleFilter} />
+      <FilterByStatus
+        handleFilter={props.handleFilter}
+        statusFilter={props.statusFilter}
+      />
       {/* <FilterByLocation /> */}
     </form>
   );

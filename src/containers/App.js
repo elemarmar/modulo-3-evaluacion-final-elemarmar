@@ -14,6 +14,7 @@ const App = (props) => {
   const [speciesFilter, setSpeciesFilter] = useState('All');
   const [statusFilter, setStatusFilter] = useState('All');
   const [genderFilter, setGenderFilter] = useState('All');
+  const [seasonFilter, setSeasonFilter] = useState(0);
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -40,7 +41,10 @@ const App = (props) => {
       setStatusFilter(data.value);
     } else if (data.key === 'gender') {
       setGenderFilter(data.value);
+    } else if (data.key === 'season') {
+      setSeasonFilter(data.value);
     }
+    console.log(seasonFilter);
   };
 
   const renderCharacterDetail = (props) => {
@@ -81,8 +85,6 @@ const App = (props) => {
   } else {
   }
 
-  console.log('characters', filteredCharacters);
-
   return (
     <>
       <div id='stars'></div>
@@ -110,11 +112,16 @@ const App = (props) => {
               nameFilter={nameFilter}
               genderFilter={genderFilter}
               speciesFilter={speciesFilter}
+              statusFilter={statusFilter}
+              seasonFilter={seasonFilter}
             />
           )}
         />
 
-        <Route path='/seasons' component={SeasonsMenu} />
+        <Route
+          path='/seasons'
+          render={() => <SeasonsMenu handleFilter={handleFilter} />}
+        />
         <Route path='/' component={Landing} />
       </Switch>
       <ul>

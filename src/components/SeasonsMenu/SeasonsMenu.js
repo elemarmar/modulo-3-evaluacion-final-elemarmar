@@ -9,7 +9,7 @@ const SeasonsMenu = (props) => {
       {/* <h1 className={classes.Title}>
         <img src={Title} />
       </h1> */}
-      <SeasonsList />
+      <SeasonsList handleFilter={props.handleFilter} />
     </>
   );
 };
