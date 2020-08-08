@@ -5,6 +5,10 @@ import classes from './CharacterList.module.css';
 const CharacterList = (props) => {
   const { charactersData } = props;
 
+  const handleClick = () => {
+    props.updatePage();
+  };
+
   const renderCharacters = () => {
     return charactersData.map((character) => {
       return (
@@ -19,10 +23,13 @@ const CharacterList = (props) => {
   };
 
   return (
-    <div className={classes.CharacterList}>
-      {charactersData ? renderCharacters() : <p>Loading</p>}
-      {/* {renderCharacters} */}
-    </div>
+    <>
+      <div className={classes.CharacterList}>
+        {charactersData ? renderCharacters() : <p>Loading</p>}
+        {/* {renderCharacters} */}
+      </div>
+      <button onClick={handleClick}>Load more</button>
+    </>
   );
 };
 

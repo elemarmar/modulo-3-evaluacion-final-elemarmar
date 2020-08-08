@@ -16,7 +16,10 @@ const SearchMenu = (props) => {
         genderFilter={props.genderFilter}
         statusFilter={props.statusFilter}
       />
-      <CharacterList charactersData={props.charactersData} />
+      <CharacterList
+        charactersData={props.charactersData}
+        updatePage={props.updatePage}
+      />
     </section>
   );
 };

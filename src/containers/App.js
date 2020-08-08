@@ -22,6 +22,7 @@ const App = (props) => {
   const [statusFilter, setStatusFilter] = useState('All');
   const [genderFilter, setGenderFilter] = useState('All');
   const [seasonFilter, setSeasonFilter] = useState();
+  const [pageNumber, setPageNumber] = useState(1);
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -33,11 +34,20 @@ const App = (props) => {
           setLoading(false);
         });
     } else {
-      Api.all()
-        .then((data) => setCharacters(data))
-        .then(() => setLoading(false));
+      Api.all(pageNumber)
+        .then((data) => {
+          if (characters.length > 0) {
+            setCharacters((oldCharacters) => [...oldCharacters, ...data]);
+            console.log(characters);
+          } else {
+            setCharacters(data);
+          }
+        })
+        .then(() => {
+          setLoading(false);
+        });
     }
-  }, [nameFilter]);
+  }, [nameFilter, pageNumber]);
 
   const handleFilter = (data) => {
     if (data.key === 'name') {
@@ -51,6 +61,11 @@ const App = (props) => {
     } else if (data.key === 'season') {
       setSeasonFilter(data.value);
     }
+  };
+
+  const updatePage = () => {
+    const updatedPageNumber = pageNumber + 1;
+    setPageNumber(updatedPageNumber);
   };
 
   const renderCharacterDetail = (props) => {
@@ -108,10 +123,13 @@ const App = (props) => {
   }
 
   return (
-    <>
-      <div id='stars'></div>
-      <div id='stars2'></div>
-      <div id='stars3'></div>
+    <main className='App'>
+      <div className='background'>
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+      </div>
+
       <Link to='/'>
         <h1 className='Title'>
           <img src={Title} />
@@ -136,6 +154,7 @@ const App = (props) => {
               speciesFilter={speciesFilter}
               statusFilter={statusFilter}
               seasonFilter={seasonFilter}
+              updatePage={updatePage}
             />
           )}
         />
@@ -157,7 +176,7 @@ const App = (props) => {
           <Link to='/seasons'>Seasons</Link>
         </li>
       </ul>
-    </>
+    </main>
   );
 };
 
