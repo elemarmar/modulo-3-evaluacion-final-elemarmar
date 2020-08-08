@@ -15,7 +15,7 @@ const Filters = (props) => {
   };
 
   return (
-    <form className={classes.Filters}>
+    <form className={classes.Filters} onSubmit={(ev) => ev.preventDefault()}>
       <FilterByName
         handleFilter={props.handleFilter}
         nameFilter={props.nameFilter}

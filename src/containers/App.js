@@ -53,28 +53,34 @@ const App = (props) => {
     }
   };
 
-  const filteredCharacters = characters
-    .filter((character) => {
-      if (speciesFilter === 'All') {
-        return true;
-      } else {
-        return character.species === speciesFilter;
-      }
-    })
-    .filter((character) => {
-      if (statusFilter === 'All') {
-        return true;
-      } else {
-        return character.status === statusFilter;
-      }
-    })
-    .filter((character) => {
-      if (genderFilter === 'All') {
-        return true;
-      } else {
-        return character.gender === genderFilter;
-      }
-    });
+  let filteredCharacters = [];
+
+  if (characters) {
+    filteredCharacters = characters
+      .filter((character) => {
+        if (speciesFilter === 'All') {
+          return true;
+        } else {
+          return character.species === speciesFilter;
+        }
+      })
+      .filter((character) => {
+        if (statusFilter === 'All') {
+          return true;
+        } else {
+          return character.status === statusFilter;
+        }
+      })
+      .filter((character) => {
+        if (genderFilter === 'All') {
+          return true;
+        } else {
+          return character.gender === genderFilter;
+        }
+      });
+  } else {
+  }
+
   console.log('characters', filteredCharacters);
   return (
     <>
