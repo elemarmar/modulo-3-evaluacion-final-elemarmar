@@ -1,0 +1,17 @@
+.Missing {
+  border: solid 2px red;
+  color: white;
+  text-align: center;
+}
+.Missing strong {
+  color: rgba(127, 238, 63, 0.911);
+}
+
+.Icon {
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-image: url('../../../assets/gifs/stupid.gif');
+  background-size: cover;
+  margin: auto;
+}

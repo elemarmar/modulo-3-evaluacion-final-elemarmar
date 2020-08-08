@@ -2,9 +2,10 @@ import React from 'react';
 import CharacterCard from './CharacterCard/CharacterCard';
 import classes from './CharacterList.module.css';
 import CharactersDone from '../CharactersDone/CharactersDone';
+import MissingCharacterByName from '../../Errors/MissingCharacterByName/MissingCharacterByName';
 
 const CharacterList = (props) => {
-  console.log(props.pageNumber);
+  console.log(props.charactersData);
   const { charactersData } = props;
 
   const handleClick = () => {
@@ -27,7 +28,11 @@ const CharacterList = (props) => {
   return (
     <>
       <div className={classes.CharacterList}>
-        {charactersData ? renderCharacters() : <p>Loading</p>}
+        {charactersData.length > 0 ? (
+          renderCharacters()
+        ) : (
+          <MissingCharacterByName nameFilter={props.nameFilter} />
+        )}
         {/* {renderCharacters} */}
       </div>
       {props.pageNumber === 30 ? (
