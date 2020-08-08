@@ -12,6 +12,8 @@ const SearchMenu = (props) => {
       <Filters
         handleFilter={props.handleFilter}
         nameFilter={props.nameFilter}
+        speciesFilter={props.speciesFilter}
+        genderFilter={props.genderFilter}
       />
       <CharacterList charactersData={props.charactersData} />
     </section>

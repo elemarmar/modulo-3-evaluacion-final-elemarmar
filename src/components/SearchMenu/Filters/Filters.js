@@ -20,8 +20,14 @@ const Filters = (props) => {
         handleFilter={props.handleFilter}
         nameFilter={props.nameFilter}
       />
-      <FilterByGender handleFilter={props.handleFilter} />
-      <FilterBySpecies handleFilter={props.handleFilter} />
+      <FilterByGender
+        handleFilter={props.handleFilter}
+        genderFilter={props.genderFilter}
+      />
+      <FilterBySpecies
+        handleFilter={props.handleFilter}
+        speciesFilter={props.speciesFilter}
+      />
       <FilterByStatus handleFilter={props.handleFilter} />
       {/* <FilterByLocation /> */}
     </form>

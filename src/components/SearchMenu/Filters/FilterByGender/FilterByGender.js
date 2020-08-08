@@ -10,7 +10,12 @@ const FilterByGender = (props) => {
   return (
     <>
       <label for='gender-select'>Choose gender:</label>
-      <select name='gender' id='gender-select' onChange={handleSelect}>
+      <select
+        name='gender'
+        id='gender-select'
+        onChange={handleSelect}
+        value={props.genderFilter}
+      >
         <option value='All'>All</option>
         <option value='Female'>Female</option>
         <option value='Male'>Male</option>

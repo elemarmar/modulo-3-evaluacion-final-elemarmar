@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './CharacterDetail.module.css';
+import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
   return (
@@ -12,6 +13,7 @@ const CharacterDetail = (props) => {
         <p>{props.character.gender}</p>
         <p>{props.character.origin.name}</p>
         <p>Episodes: {props.character.episode.length}</p>
+        <Link to='/search'>Go back</Link>
       </div>
     </section>
   );

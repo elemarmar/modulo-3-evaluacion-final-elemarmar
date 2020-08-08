@@ -82,6 +82,7 @@ const App = (props) => {
   }
 
   console.log('characters', filteredCharacters);
+
   return (
     <>
       <div id='stars'></div>
@@ -107,6 +108,8 @@ const App = (props) => {
               charactersData={filteredCharacters}
               handleFilter={handleFilter}
               nameFilter={nameFilter}
+              genderFilter={genderFilter}
+              speciesFilter={speciesFilter}
             />
           )}
         />
