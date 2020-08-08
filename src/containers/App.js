@@ -9,10 +9,11 @@ import Title from '../assets/images/website-title.png';
 import CharacterDetail from '../components/SearchMenu/CharacterDetail/CharacterDetail';
 
 const App = (props) => {
-  const [characters, setCharacters] = useState('');
+  const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
+  const [speciesFilter, setSpeciesFilter] = useState('All');
+
   const [loading, setLoading] = useState(true);
-  console.log(props);
   useEffect(() => {
     setLoading(true);
     if (nameFilter) {
@@ -29,21 +30,31 @@ const App = (props) => {
   }, [nameFilter]);
 
   const handleFilter = (data) => {
-    setNameFilter(data.value);
+    if (data.key === 'name') {
+      setNameFilter(data.value);
+    } else if (data.key === 'species') {
+      setSpeciesFilter(data.value);
+    }
   };
 
   const renderCharacterDetail = (props) => {
-    debugger;
     const characterId = props.match.params.characterId;
     const foundCharacter = characters.find((character) => {
       return character.id === parseInt(characterId);
     });
     if (foundCharacter !== undefined) {
-      console.log('hey');
       return <CharacterDetail character={foundCharacter} />;
     }
   };
 
+  const filteredCharacters = characters.filter((character) => {
+    if (speciesFilter === 'All') {
+      return true;
+    } else {
+      return character.species === speciesFilter;
+    }
+  });
+  console.log('characters', filteredCharacters);
   return (
     <>
       <div id='stars'></div>
@@ -66,7 +77,7 @@ const App = (props) => {
           path='/search'
           render={() => (
             <Search
-              charactersData={characters}
+              charactersData={filteredCharacters}
               handleFilter={handleFilter}
               nameFilter={nameFilter}
             />

@@ -21,9 +21,9 @@ const Filters = (props) => {
         nameFilter={props.nameFilter}
       />
       <FilterByGender />
-      <FilterBySpecies />
+      <FilterBySpecies handleFilter={props.handleFilter} />
       <FilterByStatus />
-      <FilterByLocation />
+      {/* <FilterByLocation /> */}
     </form>
   );
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './CharacterDetail.module.css';
 
 const CharacterDetail = (props) => {
-  console.log('characterdetail', props);
   return (
     <section className={classes.CharacterDetail}>
       <h2>{props.character.name}</h2>

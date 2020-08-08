@@ -4,7 +4,6 @@ import Season from '../Season/Season';
 import data from '../../../data/seasons.json';
 
 const SeasonsList = (props) => {
-  console.log(data);
   const renderSeasons = () => {
     return data.map((season) => {
       return <Season seasonId={season.id} />;
