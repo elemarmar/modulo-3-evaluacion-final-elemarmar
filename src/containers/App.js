@@ -12,6 +12,7 @@ const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
   const [speciesFilter, setSpeciesFilter] = useState('All');
+  const [statusFilter, setStatusFilter] = useState('All');
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -34,6 +35,8 @@ const App = (props) => {
       setNameFilter(data.value);
     } else if (data.key === 'species') {
       setSpeciesFilter(data.value);
+    } else if (data.key === 'status') {
+      setStatusFilter(data.value);
     }
   };
 
@@ -47,13 +50,21 @@ const App = (props) => {
     }
   };
 
-  const filteredCharacters = characters.filter((character) => {
-    if (speciesFilter === 'All') {
-      return true;
-    } else {
-      return character.species === speciesFilter;
-    }
-  });
+  const filteredCharacters = characters
+    .filter((character) => {
+      if (speciesFilter === 'All') {
+        return true;
+      } else {
+        return character.species === speciesFilter;
+      }
+    })
+    .filter((character) => {
+      if (statusFilter === 'All') {
+        return true;
+      } else {
+        return character.status === statusFilter;
+      }
+    });
   console.log('characters', filteredCharacters);
   return (
     <>

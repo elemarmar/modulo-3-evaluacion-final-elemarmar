@@ -1,17 +1,21 @@
 import React from 'react';
 
 const FilterByStatus = (props) => {
+  const handleSelect = (ev) => {
+    props.handleFilter({
+      value: ev.target.value,
+      key: 'status',
+    });
+  };
   return (
     <>
-      <input type='radio' id='alive' name='status' value='alive' checked />
-      <label htmlFor='huey'>Huey</label>
-      <input type='radio' id='huey' name='drone' value='huey' checked />
-      <label htmlFor='huey'>Huey</label>
-      {/* <select name='pets' id='pet-select'>
-        <option value=''>--Please choose an option--</option>
-        <option value='dog'>Dog</option>
-        <option data-content="<i class='fa fa-address-book-o' aria-hidden='true'></i>Option1"></option>
-      </select> */}
+      <label for='status-select'>Choose status:</label>
+      <select name='status' id='status-select' onChange={handleSelect}>
+        <option value='All'>All</option>
+        <option value='Alive'>Alive</option>
+        <option value='Dead'>Dead</option>
+        <option value='unknown'>unkown</option>
+      </select>
     </>
   );
 };

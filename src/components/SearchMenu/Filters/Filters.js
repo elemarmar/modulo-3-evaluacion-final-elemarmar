@@ -22,7 +22,7 @@ const Filters = (props) => {
       />
       <FilterByGender />
       <FilterBySpecies handleFilter={props.handleFilter} />
-      <FilterByStatus />
+      <FilterByStatus handleFilter={props.handleFilter} />
       {/* <FilterByLocation /> */}
     </form>
   );
