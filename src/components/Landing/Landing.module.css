@@ -1,28 +1,18 @@
+@font-face {
+  font-family: 'calligraphrregular';
+  src: url('../../stylesheets/roiland-sans-webfont.woff2') format('woff2'),
+    url('../../stylesheets/roiland-sans-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .Landing {
   background-image: url(../../assets/images/landing-background.png);
   background-position: center 50px;
   background-repeat: no-repeat;
   background-size: fill;
-  border: solid 1px salmon;
   min-height: 100vh;
   position: relative;
-}
-
-.Title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  border: solid 3px red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  margin: auto;
-}
-.Title img {
-  border: solid 2px blue;
-  width: 100%;
 }
 
 .LandingTv {
@@ -48,6 +38,7 @@
   width: 460px;
   content: '';
   z-index: 9;
+  transition: all 0.5s ease;
 }
 
 .LandingTv:hover::after {
@@ -55,14 +46,20 @@
   cursor: pointer;
 }
 
+.LandingTv::before {
+  content: '';
+  transition: all 0.5s ease;
+}
 .LandingTv:hover::before {
+  font-family: 'calligraphrregular';
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  content: 'Go';
+  content: "Show me what you've got";
+  text-align: center;
   color: white;
-  font-size: 33px;
+  font-size: 43px;
   cursor: pointer;
   z-index: 10;
 }

@@ -1,16 +1,39 @@
-.Title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  border: solid 3px red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
+@font-face {
+  font-family: 'calligraphrregular';
+  src: url('../../stylesheets/roiland-sans-webfont.woff2') format('woff2'),
+    url('../../stylesheets/roiland-sans-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Seasons {
+  margin-top: 200px;
+  font-size: 22px;
+  border: solid 1px red;
+  font-family: 'calligraphrregular';
+  color: white;
+}
+.Seasons strong {
+  color: rgba(127, 238, 63, 0.911);
+}
+
+.SeasonsText {
+  width: 80%;
+  margin: auto;
+  border: solid 1px blue;
+  position: relative;
+  text-align: center;
+}
+
+.Icon {
+  background-image: url('../../assets/gifs/happy.gif');
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  display: block;
   margin: auto;
 }
-.Title img {
-  border: solid 2px blue;
-  width: 100%;
+
+.SeasonsText h2 {
+  text-align: center;
 }

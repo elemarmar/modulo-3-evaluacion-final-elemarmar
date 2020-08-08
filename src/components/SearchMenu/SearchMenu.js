@@ -1,6 +1,5 @@
 import React from 'react';
 import CharacterList from './CharacterList/CharacterList';
-import Title from '../../assets/images/website-title.png';
 import classes from './SearchMenu.module.css';
 import Filters from './Filters/Filters';
 import '../../stylesheets/Background.scss';

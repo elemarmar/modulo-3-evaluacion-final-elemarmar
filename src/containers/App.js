@@ -7,6 +7,7 @@ import Api from '../services/getDataFromApi';
 import './App.css';
 import Title from '../assets/images/website-title.png';
 import CharacterDetail from '../components/SearchMenu/CharacterDetail/CharacterDetail';
+import MissingCharacter from '../components/Errors/MissingCharacter/MissingCharacter';
 
 const seasonsEpisodes = {
   s1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -38,7 +39,6 @@ const App = (props) => {
         .then((data) => {
           if (characters.length > 0) {
             setCharacters((oldCharacters) => [...oldCharacters, ...data]);
-            console.log(characters);
           } else {
             setCharacters(data);
           }
@@ -75,6 +75,8 @@ const App = (props) => {
     });
     if (foundCharacter !== undefined) {
       return <CharacterDetail character={foundCharacter} />;
+    } else {
+      return <MissingCharacter missingId={characterId} />;
     }
   };
 
