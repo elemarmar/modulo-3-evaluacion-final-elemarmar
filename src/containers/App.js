@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import Landing from '../components/Landing/Landing';
 import Search from '../components/SearchMenu/SearchMenu';
 import SeasonsMenu from '../components/SeasonsMenu/SeasonsMenu';
@@ -8,6 +8,7 @@ import './App.css';
 import Title from '../assets/images/website-title.png';
 import CharacterDetail from '../components/SearchMenu/CharacterDetail/CharacterDetail';
 import MissingCharacter from '../components/Errors/MissingCharacter/MissingCharacter';
+import MissingPage from '../components/Errors/MissingPage/MissingPage';
 
 const seasonsEpisodes = {
   s1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -144,28 +145,34 @@ const App = (props) => {
             return loading ? <p>Loading</p> : renderCharacterDetail(props);
           }}
         />
-        <Route
-          exact
-          path='/search'
-          render={() => (
-            <Search
-              charactersData={filteredCharacters}
-              handleFilter={handleFilter}
-              nameFilter={nameFilter}
-              genderFilter={genderFilter}
-              speciesFilter={speciesFilter}
-              statusFilter={statusFilter}
-              seasonFilter={seasonFilter}
-              updatePage={updatePage}
-            />
-          )}
-        />
+        {seasonFilter ? (
+          <Route
+            exact
+            path='/search'
+            render={() => (
+              <Search
+                charactersData={filteredCharacters}
+                handleFilter={handleFilter}
+                nameFilter={nameFilter}
+                genderFilter={genderFilter}
+                speciesFilter={speciesFilter}
+                statusFilter={statusFilter}
+                seasonFilter={seasonFilter}
+                updatePage={updatePage}
+              />
+            )}
+          />
+        ) : (
+          <Redirect from='/search' to='/seasons' />
+        )}
 
         <Route
           path='/seasons'
           render={() => <SeasonsMenu handleFilter={handleFilter} />}
         />
-        <Route path='/' component={Landing} />
+
+        <Route path='/' exact component={Landing} />
+        <Route render={() => <MissingPage />} />
       </Switch>
       <ul>
         <li>

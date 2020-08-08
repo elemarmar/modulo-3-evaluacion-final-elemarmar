@@ -1,14 +1,13 @@
 import React from 'react';
-import classes from './MissingCharacter.module.css';
 import { Link } from 'react-router-dom';
+import classes from './MissingPage.module.css';
 
-const MissingCharacter = (props) => {
+const MissingPage = (props) => {
   return (
     <section className={classes.Missing}>
-      <h2>Uh, problems...</h2>
-      <p>
-        No character with the id <strong>{props.missingId}</strong> was found
-      </p>
+      <h2>Hey you,</h2>
+      <p>Where do you think you are going???</p>
+      <p>The page you are looking for doesn't exist</p>
       <span className={classes.Icon}> </span>
       <p>some random quote</p>
       <Link to='/search'>Go back</Link>
@@ -16,4 +15,4 @@ const MissingCharacter = (props) => {
   );
 };
 
-export default MissingCharacter;
+export default MissingPage;
