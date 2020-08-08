@@ -1,37 +1,40 @@
 .Landing {
-    background-image: url(../../assets/images/landing-background.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: solid 1px salmon;
-    min-height: 100vh;
-    position: relative;
+  background-image: url(../../assets/images/landing-background.png);
+  background-position: center 50px;
+  background-repeat: no-repeat;
+  background-size: fill;
+  border: solid 1px salmon;
+  min-height: 100vh;
+  position: relative;
 }
 
 .Title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    border: solid 3px red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: solid 3px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  margin: auto;
 }
 .Title img {
-    border: solid 2px blue;
-    width: 100%;
+  border: solid 2px blue;
+  width: 100%;
 }
 
 .LandingTv {
-    position: absolute;
-    left: 50.3%;
-    top: 220px;
-    transform: translateX(-50%);
-    height: 285px;
-    width: 530px;
-    border: solid 2px orange;
- 
+  position: absolute;
+  left: 50.3%;
+  top: 230px;
+  transform: translateX(-50%);
+  height: 255px;
+  width: 450px;
+  border: solid 2px orange;
+  z-index: -1;
+  animation-name: changeTvChannels;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }

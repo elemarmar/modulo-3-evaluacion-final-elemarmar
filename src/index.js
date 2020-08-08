@@ -4,7 +4,6 @@ import './index.css';
 import App from './containers/App';
 import { HashRouter } from 'react-router-dom';
 
-
 ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
@@ -13,4 +12,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-

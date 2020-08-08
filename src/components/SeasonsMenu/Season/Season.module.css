@@ -1,40 +1,39 @@
 .Season {
-    height: 200px;
-    border: solid 2px red;
-    position: relative;
-    max-width: 800px;
-    margin: auto;
+  height: 200px;
+  position: relative;
+  max-width: 800px;
+  margin: auto;
 }
 .Season::before {
-    content: '';
-    height: 200px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0,0,0, .7);
-    transition: all .5s ease;
+  content: '';
+  height: 199px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: solid 3px transparent;
+  transition: all 0.5s ease;
 }
 
-
 .Season:hover::before {
-    border: solid 3px blue;
-    z-index: 2;
-    background-color: rgba(0,0,0,0);
-    cursor: pointer;
+  border: solid 3px blue;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 
 .Season h2 {
-    position: absolute;
-    left: 40px;
-    font-size: 50px;
-    color: white;
-    z-index: 3;
+  position: absolute;
+  left: 40px;
+  font-size: 50px;
+  color: white;
+  z-index: 3;
 }
 
 .SeasonVideo {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }

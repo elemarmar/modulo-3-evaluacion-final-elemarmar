@@ -5,3 +5,17 @@
   box-sizing: border-box;
 }
 
+.Title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  margin: auto;
+}
+.Title img {
+  width: 100%;
+}
