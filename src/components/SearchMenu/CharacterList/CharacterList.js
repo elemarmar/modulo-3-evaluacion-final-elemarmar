@@ -1,8 +1,10 @@
 import React from 'react';
 import CharacterCard from './CharacterCard/CharacterCard';
 import classes from './CharacterList.module.css';
+import CharactersDone from '../CharactersDone/CharactersDone';
 
 const CharacterList = (props) => {
+  console.log(props.pageNumber);
   const { charactersData } = props;
 
   const handleClick = () => {
@@ -28,7 +30,11 @@ const CharacterList = (props) => {
         {charactersData ? renderCharacters() : <p>Loading</p>}
         {/* {renderCharacters} */}
       </div>
-      <button onClick={handleClick}>Load more</button>
+      {props.pageNumber === 30 ? (
+        <CharactersDone />
+      ) : (
+        <button onClick={handleClick}>Load more</button>
+      )}
     </>
   );
 };

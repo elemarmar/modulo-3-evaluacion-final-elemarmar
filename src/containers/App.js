@@ -159,6 +159,7 @@ const App = (props) => {
                 statusFilter={statusFilter}
                 seasonFilter={seasonFilter}
                 updatePage={updatePage}
+                pageNumber={pageNumber}
               />
             )}
           />

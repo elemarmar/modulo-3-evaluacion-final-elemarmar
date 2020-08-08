@@ -1,0 +1,18 @@
+.Missing {
+  margin-top: 0;
+  border: solid 2px red;
+  color: white;
+  text-align: center;
+}
+.Missing h6 {
+  color: rgba(127, 238, 63, 0.911);
+}
+
+.Icon {
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-image: url('../../../assets/gifs/disappointment.gif');
+  background-size: cover;
+  margin: auto;
+}

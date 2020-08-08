@@ -18,6 +18,7 @@ const SearchMenu = (props) => {
       <CharacterList
         charactersData={props.charactersData}
         updatePage={props.updatePage}
+        pageNumber={props.pageNumber}
       />
     </section>
   );
