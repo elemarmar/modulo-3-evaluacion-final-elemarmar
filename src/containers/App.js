@@ -13,6 +13,7 @@ const App = (props) => {
   const [nameFilter, setNameFilter] = useState('');
   const [speciesFilter, setSpeciesFilter] = useState('All');
   const [statusFilter, setStatusFilter] = useState('All');
+  const [genderFilter, setGenderFilter] = useState('All');
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -37,6 +38,8 @@ const App = (props) => {
       setSpeciesFilter(data.value);
     } else if (data.key === 'status') {
       setStatusFilter(data.value);
+    } else if (data.key === 'gender') {
+      setGenderFilter(data.value);
     }
   };
 
@@ -63,6 +66,13 @@ const App = (props) => {
         return true;
       } else {
         return character.status === statusFilter;
+      }
+    })
+    .filter((character) => {
+      if (genderFilter === 'All') {
+        return true;
+      } else {
+        return character.gender === genderFilter;
       }
     });
   console.log('characters', filteredCharacters);

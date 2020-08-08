@@ -20,7 +20,7 @@ const Filters = (props) => {
         handleFilter={props.handleFilter}
         nameFilter={props.nameFilter}
       />
-      <FilterByGender />
+      <FilterByGender handleFilter={props.handleFilter} />
       <FilterBySpecies handleFilter={props.handleFilter} />
       <FilterByStatus handleFilter={props.handleFilter} />
       {/* <FilterByLocation /> */}
