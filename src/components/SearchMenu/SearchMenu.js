@@ -6,7 +6,6 @@ import Filters from './Filters/Filters';
 import '../../stylesheets/Background.scss';
 
 const SearchMenu = (props) => {
-  console.log(props);
   return (
     <section className={classes.SearchMenu}>
       <h2 className={classes.SeasonTitle}>Season {props.seasonFilter}</h2>

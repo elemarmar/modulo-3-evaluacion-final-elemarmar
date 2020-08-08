@@ -8,13 +8,20 @@ import './App.css';
 import Title from '../assets/images/website-title.png';
 import CharacterDetail from '../components/SearchMenu/CharacterDetail/CharacterDetail';
 
+const seasonsEpisodes = {
+  s1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  s2: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+  s3: [22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+  s4: [32, 33, 34, 35, 36],
+};
+
 const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
   const [speciesFilter, setSpeciesFilter] = useState('All');
   const [statusFilter, setStatusFilter] = useState('All');
   const [genderFilter, setGenderFilter] = useState('All');
-  const [seasonFilter, setSeasonFilter] = useState(0);
+  const [seasonFilter, setSeasonFilter] = useState();
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -44,7 +51,6 @@ const App = (props) => {
     } else if (data.key === 'season') {
       setSeasonFilter(data.value);
     }
-    console.log(seasonFilter);
   };
 
   const renderCharacterDetail = (props) => {
@@ -81,8 +87,24 @@ const App = (props) => {
         } else {
           return character.gender === genderFilter;
         }
+      })
+      .filter((character) => {
+        if (seasonFilter === '4') {
+          return true;
+        } else if (seasonFilter === '1') {
+          return character.episode
+            .map((c) => c.slice(40))
+            .some((ep) => ep < 12);
+        } else if (seasonFilter === '2') {
+          return character.episode
+            .map((c) => c.slice(40))
+            .some((ep) => ep < 22);
+        } else if (seasonFilter === '3') {
+          return character.episode
+            .map((c) => c.slice(40))
+            .some((ep) => ep < 32);
+        }
       });
-  } else {
   }
 
   return (
