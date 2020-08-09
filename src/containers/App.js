@@ -63,7 +63,7 @@ const App = (props) => {
       .then(() => {
         setLoading(false);
       });
-  }, [nameFilter, pageNumber]);
+  }, [pageNumber]);
 
   const handleFilter = (data) => {
     if (data.key === 'name') {
@@ -88,6 +88,11 @@ const App = (props) => {
     let filteredCharacters = [];
     if (characters) {
       filteredCharacters = characters
+        .filter((character) => {
+          return character.name
+            .toLowerCase()
+            .includes(nameFilter.toLowerCase());
+        })
         .filter((character) => {
           if (speciesFilter === 'All') {
             return true;
