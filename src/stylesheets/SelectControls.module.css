@@ -1,0 +1,16 @@
+.selectControl {
+  background: rgba(99, 102, 109, 0.3) no-repeat right center;
+  border-radius: 8px;
+  border: none;
+  height: 30px;
+  padding: 2px;
+  color: rgb(201, 200, 200);
+}
+
+.selectControl:focus {
+  border: 1px solid rgba(197, 197, 197, 0.582);
+  outline: none;
+}
+label {
+  display: none;
+}

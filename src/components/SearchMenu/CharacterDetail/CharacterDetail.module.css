@@ -11,7 +11,7 @@
   width: 600px;
   box-shadow: 0 5px 5px rgb(71, 71, 71);
   border-radius: 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-wrap: wrap;
   position: relative;

@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from '../../../../stylesheets/SelectControls.module.css';
 
 const FilterByStatus = (props) => {
   const handleSelect = (ev) => {
@@ -12,6 +13,7 @@ const FilterByStatus = (props) => {
       <label for='status-select'>Choose status:</label>
       <select
         name='status'
+        className={classes.selectControl}
         id='status-select'
         onChange={handleSelect}
         value={props.statusFilter}

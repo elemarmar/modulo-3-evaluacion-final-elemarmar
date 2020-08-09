@@ -3,17 +3,23 @@
   position: relative;
   max-width: 800px;
   margin: auto;
+  transition: all 0.5s ease;
+}
+
+.Season:hover {
+  border: solid 3px blue;
 }
 
 .SeasonNumber {
   color: rgba(255, 255, 255, 0.5);
   position: absolute;
   padding: 10px 20px;
+  font-size: 33px;
 }
 
 .Season::before {
   content: '';
-  height: 199px;
+  height: 195px;
   position: absolute;
   top: 0;
   left: 0;
@@ -24,10 +30,9 @@
 }
 
 .Season:hover::before {
-  border: solid 3px blue;
-  z-index: 2;
+  height: 0;
+  width: 0;
   background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
 }
 
 .Season:hover .SeasonNumber {

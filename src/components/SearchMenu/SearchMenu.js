@@ -7,19 +7,13 @@ import '../../stylesheets/Background.scss';
 const SearchMenu = (props) => {
   return (
     <section className={classes.SearchMenu}>
-      <h2 className={classes.SeasonTitle}>Season {props.seasonFilter}</h2>
-      <Filters
-        handleFilter={props.handleFilter}
-        nameFilter={props.nameFilter}
-        speciesFilter={props.speciesFilter}
-        genderFilter={props.genderFilter}
-        statusFilter={props.statusFilter}
-      />
+      <h2 className={classes.SeasonTitle}>Season {props.filters.season}</h2>
+      <Filters handleFilter={props.handleFilter} filters={props.filters} />
       <CharacterList
         charactersData={props.charactersData}
         updatePage={props.updatePage}
         pageNumber={props.pageNumber}
-        nameFilter={props.nameFilter}
+        nameFilter={props.filters.name}
       />
     </section>
   );

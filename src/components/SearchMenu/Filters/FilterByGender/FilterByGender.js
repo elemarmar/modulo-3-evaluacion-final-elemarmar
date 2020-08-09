@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from '../../../../stylesheets/SelectControls.module.css';
 
 const FilterByGender = (props) => {
   const handleSelect = (ev) => {
@@ -11,6 +12,7 @@ const FilterByGender = (props) => {
     <>
       <label for='gender-select'>Choose gender:</label>
       <select
+        className={classes.selectControl}
         name='gender'
         id='gender-select'
         onChange={handleSelect}

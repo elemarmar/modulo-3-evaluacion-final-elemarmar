@@ -9,7 +9,6 @@
 .Seasons {
   margin-top: 200px;
   font-size: 22px;
-  border: solid 1px red;
   font-family: 'calligraphrregular';
   color: white;
 }
@@ -20,7 +19,6 @@
 .SeasonsText {
   width: 80%;
   margin: auto;
-  border: solid 1px blue;
   position: relative;
   text-align: center;
 }

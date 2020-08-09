@@ -25,23 +25,32 @@ const CharacterList = (props) => {
     });
   };
 
+  const renderBtn = () => {
+    if (props.nameFilter) {
+      return <p>Nothing to see here</p>;
+    } else if (props.pageNumber === 30) {
+      return <CharactersDone />;
+    } else {
+      return (
+        <button className={classes.Btn} onClick={handleClick}>
+          Load more
+        </button>
+      );
+    }
+  };
+
   return (
     <>
       <div className={classes.CharacterList}>
-        {props.nameFilter && charactersData.length > 0 ? (
-          renderCharacters()
-        ) : (
-          <MissingCharacterByName nameFilter={props.nameFilter} />
-        )}
-        {/* {renderCharacters} */}
+        {props.charactersData ? renderCharacters() : <p>Loading</p>}
       </div>
-      {props.pageNumber === 30 ? (
-        <CharactersDone />
-      ) : (
-        <button onClick={handleClick}>Load more</button>
-      )}
+      {renderBtn()}
     </>
   );
 };
 
 export default CharacterList;
+
+{
+  /* <MissingCharacterByName nameFilter={props.nameFilter} /> */
+}

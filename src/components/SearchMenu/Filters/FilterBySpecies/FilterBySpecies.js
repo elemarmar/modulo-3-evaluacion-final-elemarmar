@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from '../../../../stylesheets/SelectControls.module.css';
 
 const FilterBySpecies = (props) => {
   const handleSelect = (ev) => {
@@ -12,6 +13,7 @@ const FilterBySpecies = (props) => {
       <label for='species-select'>Choose a species:</label>
       <select
         name='species'
+        className={classes.selectControl}
         id='species-select'
         onChange={handleSelect}
         value={props.speciesFilter}

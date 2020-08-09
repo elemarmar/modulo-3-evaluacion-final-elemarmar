@@ -1,8 +1,47 @@
+@font-face {
+  font-family: 'calligraphrregular';
+  src: url('../../../stylesheets/roiland-sans-webfont.woff2') format('woff2'),
+    url('../../../stylesheets/roiland-sans-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .CharacterList {
-    margin: 30px 30px;
-    border: solid 1px red;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  margin: 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.Btn {
+  display: block;
+  font-family: 'calligraphrregular';
+  font-size: 23px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: white;
+  background-color: rgb(22, 22, 41);
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.Btn:hover {
+  cursor: pointer;
+  font-size: 25px;
+  background-color: rgb(46, 46, 73);
+}
+
+.Btn:active {
+  opacity: 0;
+  border: none;
+  outline: none;
+}
+
+.Btn:focus {
+  border: none;
+  outline: none;
 }

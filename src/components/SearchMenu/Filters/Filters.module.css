@@ -1,6 +1,7 @@
 .Filters {
-  border: solid 2px purple;
+  margin: auto;
   margin-top: 100px;
   display: flex;
-  justify-content: center;
+  width: 500px;
+  justify-content: space-between;
 }

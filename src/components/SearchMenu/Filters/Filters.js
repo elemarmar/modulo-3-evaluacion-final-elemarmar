@@ -4,7 +4,6 @@ import classes from './Filters.module.css';
 import FilterByGender from './FilterByGender/FilterByGender';
 import FilterBySpecies from './FilterBySpecies/FilterBySpecies';
 import FilterByStatus from './FilterByStatus/FilterByStatus';
-import FilterByLocation from './FilterByLocation/FilterByLocation';
 
 const Filters = (props) => {
   const handleInput = (ev) => {
@@ -18,21 +17,20 @@ const Filters = (props) => {
     <form className={classes.Filters} onSubmit={(ev) => ev.preventDefault()}>
       <FilterByName
         handleFilter={props.handleFilter}
-        nameFilter={props.nameFilter}
+        nameFilter={props.filters.name}
       />
       <FilterByGender
         handleFilter={props.handleFilter}
-        genderFilter={props.genderFilter}
+        genderFilter={props.filters.gender}
       />
       <FilterBySpecies
         handleFilter={props.handleFilter}
-        speciesFilter={props.speciesFilter}
+        speciesFilter={props.filters.species}
       />
       <FilterByStatus
         handleFilter={props.handleFilter}
-        statusFilter={props.statusFilter}
+        statusFilter={props.filters.status}
       />
-      {/* <FilterByLocation /> */}
     </form>
   );
 };

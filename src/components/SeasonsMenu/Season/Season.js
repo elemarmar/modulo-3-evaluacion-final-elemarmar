@@ -23,13 +23,12 @@ const Season = (props) => {
           <video
             className={classes.SeasonVideo}
             poster='https://i.imgur.com/Us5ckqm.jpg'
-            onMouseOver={(event) => event.target.play()}
-            onMouseOut={(event) => event.target.pause()}
+            onMouseOver={(event) => event.currentTarget.play()}
+            onMouseOut={(event) => event.currentTarget.pause()}
             playsInline
             // autoPlay
             muted
             loop
-            poster='polina.jpg'
             id='bgvid'
           >
             <source src={videos[props.seasonId - 1]} type='video/mp4' />
