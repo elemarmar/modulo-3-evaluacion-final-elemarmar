@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'calligraphrregular';
+  src: url('../../stylesheets/roiland-sans-webfont.woff2') format('woff2'),
+    url('../../stylesheets/roiland-sans-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.NavBar {
+  height: 80px;
+  font-family: 'calligraphrregular';
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  margin: 0;
+}
+
+.NavBar a {
+  display: block;
+  padding: 27px 20px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 22px;
+  transition: all 0.5s ease;
+}
+
+.NavBar a:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.IconHello,
+.IconSearch,
+.IconSeason,
+.IconAbout {
+  position: relative;
+}
+
+.IconHello::before,
+.IconSearch::before,
+.IconSeason::before,
+.IconAbout::before {
+  content: '';
+  position: absolute;
+  left: -70%;
+  top: 0;
+  width: 80px;
+  height: 80px;
+}
+
+.IconHello:hover::before {
+  background-image: url('../../assets/gifs/hello.gif');
+  background-size: cover;
+  background-position: center;
+}
+.IconSearch:hover::before {
+  background-image: url('../../assets/gifs/search.gif');
+  background-size: cover;
+  background-position: center;
+}
+.IconSeason:hover::before {
+  background-image: url('../../assets/gifs/season.gif');
+  background-size: cover;
+  background-position: center;
+}
+.IconAbout:hover::before {
+  background-image: url('../../assets/gifs/about.gif');
+  background-size: cover;
+  background-position: center;
+}

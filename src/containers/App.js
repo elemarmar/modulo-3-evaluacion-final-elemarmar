@@ -9,6 +9,8 @@ import Title from '../assets/images/website-title.png';
 import CharacterDetail from '../components/SearchMenu/CharacterDetail/CharacterDetail';
 import MissingCharacter from '../components/Errors/MissingCharacter/MissingCharacter';
 import MissingPage from '../components/Errors/MissingPage/MissingPage';
+import Nav from '../components/Nav/Nav';
+import author from '../data/author.json';
 
 const seasonsEpisodes = {
   s1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -126,67 +128,65 @@ const App = (props) => {
   }
 
   return (
-    <main className='App'>
-      <div className='background'>
-        <div id='stars'></div>
-        <div id='stars2'></div>
-        <div id='stars3'></div>
-      </div>
+    <>
+      <main className='App'>
+        <div className='background'>
+          <div id='stars'></div>
+          <div id='stars2'></div>
+          <div id='stars3'></div>
+        </div>
 
-      <Link to='/'>
-        <h1 className='Title'>
-          <img src={Title} />
-        </h1>
-      </Link>
-      <Switch>
-        <Route
-          path='/search/:characterId'
-          render={(props) => {
-            return loading ? <p>Loading</p> : renderCharacterDetail(props);
-          }}
-        />
-        {seasonFilter ? (
+        <Link to='/'>
+          <h1 className='Title'>
+            <img src={Title} />
+          </h1>
+        </Link>
+        <Switch>
           <Route
-            exact
-            path='/search'
-            render={() => (
-              <Search
-                charactersData={filteredCharacters}
-                handleFilter={handleFilter}
-                nameFilter={nameFilter}
-                genderFilter={genderFilter}
-                speciesFilter={speciesFilter}
-                statusFilter={statusFilter}
-                seasonFilter={seasonFilter}
-                updatePage={updatePage}
-                pageNumber={pageNumber}
-              />
-            )}
+            path='/search/:characterId'
+            render={(props) => {
+              return loading ? <p>Loading</p> : renderCharacterDetail(props);
+            }}
           />
-        ) : (
-          <Redirect from='/search' to='/seasons' />
-        )}
+          {seasonFilter ? (
+            <Route
+              exact
+              path='/search'
+              render={() => (
+                <Search
+                  charactersData={filteredCharacters}
+                  handleFilter={handleFilter}
+                  nameFilter={nameFilter}
+                  genderFilter={genderFilter}
+                  speciesFilter={speciesFilter}
+                  statusFilter={statusFilter}
+                  seasonFilter={seasonFilter}
+                  updatePage={updatePage}
+                  pageNumber={pageNumber}
+                />
+              )}
+            />
+          ) : (
+            <Redirect from='/search' to='/seasons' />
+          )}
 
-        <Route
-          path='/seasons'
-          render={() => <SeasonsMenu handleFilter={handleFilter} />}
-        />
+          <Route
+            path='/seasons'
+            render={() => <SeasonsMenu handleFilter={handleFilter} />}
+          />
+          <Route
+            path='/about'
+            render={() => <CharacterDetail character={author} />}
+          />
 
-        <Route path='/' exact component={Landing} />
-        <Route render={() => <MissingPage />} />
-      </Switch>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/search'>Search</Link>
-        </li>
-        <li>
-          <Link to='/seasons'>Seasons</Link>
-        </li>
-      </ul>
-    </main>
+          <Route path='/' exact component={Landing} />
+          <Route render={() => <MissingPage />} />
+        </Switch>
+      </main>
+      <footer>
+        <Nav />
+      </footer>
+    </>
   );
 };
 

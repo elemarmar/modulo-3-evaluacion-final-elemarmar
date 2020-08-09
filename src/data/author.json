@@ -1,0 +1,12 @@
+{
+  "name": "Elena",
+  "status": "alive",
+  "species": "Human",
+  "gender": "Female",
+  "origin": {
+    "name": "Earth, Spain, Madrid"
+  },
+  "episode": [],
+  "description": "This is the description",
+  "image": "https://drive.google.com/file/d/13EMVWUlKmHY0sXsT1XiwYeRjAeUVPyq7/view?usp=sharing"
+}

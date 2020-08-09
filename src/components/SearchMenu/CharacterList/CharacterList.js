@@ -28,7 +28,7 @@ const CharacterList = (props) => {
   return (
     <>
       <div className={classes.CharacterList}>
-        {charactersData.length > 0 ? (
+        {props.nameFilter && charactersData.length > 0 ? (
           renderCharacters()
         ) : (
           <MissingCharacterByName nameFilter={props.nameFilter} />
