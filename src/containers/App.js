@@ -13,6 +13,7 @@ import SeasonsMenu from '../components/SeasonsMenu/SeasonsMenu';
 import CharacterDetail from '../components/SearchMenu/CharacterDetail/CharacterDetail';
 import MissingPage from '../components/Errors/MissingPage/MissingPage';
 import Nav from '../components/Nav/Nav';
+import Loader from '../components/UI/Loader/Loader';
 
 // data & services
 import Api from '../services/getDataFromApi';
@@ -41,29 +42,17 @@ const App = (props) => {
   };
 
   // fetch
+
   useEffect(() => {
     setLoading(true);
-    // fetch by name
-    // if (nameFilter) {
-    //   Api.name(nameFilter.toLowerCase())
-    //     .then((data) => setCharacters(data))
-    //     .then(() => {
-    //       setLoading(false);
-    //     });
-
-    // fetch by page
-    Api.all(pageNumber)
-      .then((data) => {
-        if (characters) {
+    for (let i = 1; i < 31; i++) {
+      Api.all(i)
+        .then((data) => {
           setCharacters((oldCharacters) => [...oldCharacters, ...data]);
-        } else {
-          setCharacters(data);
-        }
-      })
-      .then(() => {
-        setLoading(false);
-      });
-  }, [pageNumber]);
+        })
+        .then(setLoading(false));
+    }
+  }, []);
 
   const handleFilter = (data) => {
     if (data.key === 'name') {
@@ -166,15 +155,19 @@ const App = (props) => {
             <Route
               exact
               path='/search'
-              render={() => (
-                <Search
-                  filters={filters}
-                  charactersData={renderFilteredCharacters()}
-                  handleFilter={handleFilter}
-                  updatePage={updatePage}
-                  pageNumber={pageNumber}
-                />
-              )}
+              render={() => {
+                return characters.length < 500 ? (
+                  <Loader />
+                ) : (
+                  <Search
+                    filters={filters}
+                    charactersData={renderFilteredCharacters()}
+                    handleFilter={handleFilter}
+                    updatePage={updatePage}
+                    pageNumber={pageNumber}
+                  />
+                );
+              }}
             />
           ) : (
             <Redirect from='/search' to='/seasons' />

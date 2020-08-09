@@ -26,31 +26,43 @@ const CharacterDetail = (props) => {
       } else {
         console.log('foundCharacter existe');
         return (
-          <section className={classes.CharacterDetail}>
-            <div className={classes.CharacterAvatar}>
-              <img className={classes.Avatar} src={foundCharacter.image} />
-            </div>
-            <div className={classes.CharacterInfo}>
-              <h2 className={classes.CharacterName}>{foundCharacter.name}</h2>
-              <p>
-                <strong>Status:</strong> {foundCharacter.status}
-              </p>
-              <p>
-                <strong>Species:</strong> {foundCharacter.species}
-              </p>
-              <p>
-                <strong>Gender:</strong> {foundCharacter.gender}
-              </p>
-              <p>
-                <strong>Origin:</strong> {foundCharacter.origin.name}
-              </p>
-              <p>
-                <strong>Episodes:</strong> {foundCharacter.episode.length}
-              </p>
-            </div>
-
-            <div className={classes.CharacterQuotes}>
-              <p>This is a random wuote</p>
+          <>
+            <div className={classes.FlipContainer}>
+              <div className={classes.Flipper}>
+                <div className={classes.Front}>
+                  <div className={classes.CharacterCard}>
+                    <img
+                      src={foundCharacter.image}
+                      className={classes.CharacterPic}
+                    ></img>
+                    <div className={classes.CharacterName}>
+                      <h4>{foundCharacter.name}</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className={classes.Back}>
+                  <div className={classes.CharacterInfo}>
+                    <h2 className={classes.CharacterName}>
+                      {foundCharacter.name}
+                    </h2>
+                    <p>
+                      <strong>Status:</strong> {foundCharacter.status}
+                    </p>
+                    <p>
+                      <strong>Species:</strong> {foundCharacter.species}
+                    </p>
+                    <p>
+                      <strong>Gender:</strong> {foundCharacter.gender}
+                    </p>
+                    <p>
+                      <strong>Origin:</strong> {foundCharacter.origin.name}
+                    </p>
+                    <p>
+                      <strong>Episodes:</strong> {foundCharacter.episode.length}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <ul className={classes.Links}>
               <li>
@@ -58,13 +70,8 @@ const CharacterDetail = (props) => {
                   Go back
                 </Link>
               </li>
-              <li>
-                <Link className={classes.Link} to='/search'>
-                  Next
-                </Link>
-              </li>
             </ul>
-          </section>
+          </>
         );
       }
     } else {

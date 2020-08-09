@@ -1,19 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CharacterCard from './CharacterCard/CharacterCard';
 import classes from './CharacterList.module.css';
 import CharactersDone from '../CharactersDone/CharactersDone';
 import MissingCharacterByName from '../../Errors/MissingCharacterByName/MissingCharacterByName';
 
 const CharacterList = (props) => {
-  console.log(props.charactersData);
+  const [shownCharacters, setShownCharacters] = useState(20);
   const { charactersData } = props;
 
+  charactersData.sort(function (a, b) {
+    return a.id - b.id;
+  });
+
+  const filterData = () => {
+    console.log(props.nameFilter);
+    if (props.nameFilter) {
+      console.log('hello');
+      return charactersData.slice(0);
+    } else {
+      console.log('bye');
+      return charactersData.slice(0, shownCharacters);
+    }
+  };
+
   const handleClick = () => {
-    props.updatePage();
+    setShownCharacters(shownCharacters + 20);
   };
 
   const renderCharacters = () => {
-    return charactersData.map((character) => {
+    return filterData().map((character) => {
       return (
         <CharacterCard
           key={character.id}

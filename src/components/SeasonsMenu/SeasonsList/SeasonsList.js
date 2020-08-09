@@ -6,7 +6,13 @@ import data from '../../../data/seasons.json';
 const SeasonsList = (props) => {
   const renderSeasons = () => {
     return data.map((season) => {
-      return <Season seasonId={season.id} handleFilter={props.handleFilter} />;
+      return (
+        <Season
+          key={season.id}
+          seasonId={season.id}
+          handleFilter={props.handleFilter}
+        />
+      );
     });
   };
   return (

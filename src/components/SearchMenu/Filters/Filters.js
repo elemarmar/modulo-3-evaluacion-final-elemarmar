@@ -4,6 +4,7 @@ import classes from './Filters.module.css';
 import FilterByGender from './FilterByGender/FilterByGender';
 import FilterBySpecies from './FilterBySpecies/FilterBySpecies';
 import FilterByStatus from './FilterByStatus/FilterByStatus';
+import OrderName from './OrderName/OrderName';
 
 const Filters = (props) => {
   const handleInput = (ev) => {
@@ -31,6 +32,7 @@ const Filters = (props) => {
         handleFilter={props.handleFilter}
         statusFilter={props.filters.status}
       />
+      <OrderName />
     </form>
   );
 };

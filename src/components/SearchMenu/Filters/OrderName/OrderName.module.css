@@ -1,0 +1,8 @@
+.OrderName {
+  border: solid 1px red;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.747);
+  font-size: 12px;
+}
