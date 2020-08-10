@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './OrderName.module.css';
+import PropTypes from 'prop-types';
 
 const OrderName = (props) => {
   const handleInput = (ev) => {
@@ -16,5 +17,7 @@ const OrderName = (props) => {
     </>
   );
 };
-
+OrderName.propTypes = {
+  orderCharacters: PropTypes.func,
+};
 export default OrderName;

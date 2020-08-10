@@ -3,8 +3,8 @@ import CharacterCard from './CharacterCard/CharacterCard';
 import classes from './CharacterList.module.css';
 import CharactersDone from '../CharactersDone/CharactersDone';
 import MissingCharacterByName from '../../Errors/MissingCharacterByName/MissingCharacterByName';
-import loadingPic from '../../../assets/gifs/relaxed.gif';
 import Loader from '../../UI/Loader/Loader';
+import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
   const [shownCharacters, setShownCharacters] = useState(20);
@@ -33,7 +33,7 @@ const CharacterList = (props) => {
             key={character.id}
             id={character.id}
             name={character.name}
-            pic={character.image ? character.image : loadingPic}
+            pic={character.image}
           />
         );
       });
@@ -65,5 +65,8 @@ const CharacterList = (props) => {
     </>
   );
 };
-
+CharacterList.propTypes = {
+  charactersData: PropTypes.array,
+  nameFilter: PropTypes.string,
+};
 export default CharacterList;

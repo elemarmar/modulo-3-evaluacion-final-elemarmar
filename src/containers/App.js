@@ -21,10 +21,16 @@ import Api from '../services/getDataFromApi';
 import author from '../data/author.json';
 
 
+const episodeBreak = {
+  season1: 12,
+  season2: 22,
+  season3: 32
+}
+
+
 const App = (props) => {
   // states
   const [characters, setCharacters] = useState('');
-  const [pageNumber, setPageNumber] = useState(1);
   const [loading, setLoading] = useState(true);
 
   // filters
@@ -72,10 +78,7 @@ const App = (props) => {
     }
   };
 
-  const updatePage = () => {
-    const updatedPageNumber = pageNumber + 1;
-    setPageNumber(updatedPageNumber);
-  };
+
 
   const renderFilteredCharacters = () => {
     let filteredCharacters = [];
@@ -113,15 +116,15 @@ const App = (props) => {
           } else if (seasonFilter === '1') {
             return character.episode
               .map((c) => c.slice(40))
-              .some((ep) => ep < 12);
+              .some((ep) => ep < episodeBreak.season1);
           } else if (seasonFilter === '2') {
             return character.episode
               .map((c) => c.slice(40))
-              .some((ep) => ep < 22);
+              .some((ep) => ep < episodeBreak.season2);
           } else if (seasonFilter === '3') {
             return character.episode
               .map((c) => c.slice(40))
-              .some((ep) => ep < 32);
+              .some((ep) => ep < episodeBreak.season3);
           }
         });
     }
@@ -129,13 +132,11 @@ const App = (props) => {
   };
 
   const orderCharacters = (state) => {
-
     if (state) {
       setIsOrderedByName(true);
     } else {
       setIsOrderedByName(false);
     }
-
   }
 
   return (
@@ -152,16 +153,13 @@ const App = (props) => {
             <img src={Title} />
           </h1>
         </Link>
-        {/* <audio controls preload="metadata">
-  <source src={introSong} type="audio/mp3" />
-    </audio> */}
 
         <Switch>
           <Route
             path='/search/:characterId'
             render={(props) => {
               return loading ? (
-                <p>Loading</p>
+                <Loader />
               ) : (
                 <CharacterDetail characterId={props.match.params.characterId} />
               );
@@ -179,8 +177,6 @@ const App = (props) => {
                     filters={filters}
                     charactersData={renderFilteredCharacters()}
                     handleFilter={handleFilter}
-                    updatePage={updatePage}
-                    pageNumber={pageNumber}
                     orderCharacters={orderCharacters}
                   />
                 );

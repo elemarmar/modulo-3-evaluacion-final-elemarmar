@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './SeasonsMenu.module.css';
 import SeasonsList from './SeasonsList/SeasonsList';
+import PropTypes from 'prop-types';
 
 const SeasonsMenu = (props) => {
   return (
@@ -23,5 +24,7 @@ const SeasonsMenu = (props) => {
     </section>
   );
 };
-
+SeasonsMenu.propTypes = {
+  handleFilter: PropTypes.func,
+};
 export default SeasonsMenu;

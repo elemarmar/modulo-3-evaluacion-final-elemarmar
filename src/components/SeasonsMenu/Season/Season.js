@@ -9,6 +9,7 @@ import poster1 from '../../../assets/videos/seasons/poster1.png';
 import poster2 from '../../../assets/videos/seasons/poster2.png';
 import poster3 from '../../../assets/videos/seasons/poster3.png';
 import poster4 from '../../../assets/videos/seasons/poster4.png';
+import PropTypes from 'prop-types';
 
 const videos = [video1, video2, video3, video4];
 const posters = [poster1, poster2, poster3, poster4];
@@ -43,5 +44,9 @@ const Season = (props) => {
     </>
   );
 };
-
+Season.propTypes = {
+  seasonId: PropTypes.string,
+  handleFilter: PropTypes.func,
+  filters: PropTypes.object
+};
 export default Season;

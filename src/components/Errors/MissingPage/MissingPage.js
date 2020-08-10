@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from './MissingPage.module.css';
 
-const MissingPage = (props) => {
+
+
+const MissingPage = () => {
   return (
     <section className={classes.Missing}>
       <h2>Hey you,</h2>
@@ -14,5 +16,6 @@ const MissingPage = (props) => {
     </section>
   );
 };
+
 
 export default MissingPage;

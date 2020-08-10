@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from '../../../../stylesheets/SelectControls.module.css';
+import PropTypes from 'prop-types';
 
 const FilterByGender = (props) => {
   const handleSelect = (ev) => {
@@ -27,5 +28,8 @@ const FilterByGender = (props) => {
     </>
   );
 };
-
+FilterByGender.propTypes = {
+  handleFilter: PropTypes.func,
+  genderFilter: PropTypes.string,
+};
 export default FilterByGender;

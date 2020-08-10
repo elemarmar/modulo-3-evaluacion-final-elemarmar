@@ -2,6 +2,8 @@ import React from 'react';
 import classes from './SeasonsList.module.css';
 import Season from '../Season/Season';
 import data from '../../../data/seasons.json';
+import PropTypes from 'prop-types';
+
 
 const SeasonsList = (props) => {
   const renderSeasons = () => {
@@ -23,5 +25,7 @@ const SeasonsList = (props) => {
     </>
   );
 };
-
+SeasonsList.propTypes = {
+  handleFilter: PropTypes.func,
+};
 export default SeasonsList;

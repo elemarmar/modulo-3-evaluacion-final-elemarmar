@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './MissingCharacterByName.module.css';
+import PropTypes from 'prop-types';
 
 const MissingCharacterByName = (props) => {
   return (
@@ -12,6 +13,11 @@ const MissingCharacterByName = (props) => {
       <span className={classes.Icon}> </span>
     </section>
   );
+};
+
+MissingCharacterByName.propTypes = {
+  name: PropTypes.string,
+  nameFilter: PropTypes.string
 };
 
 export default MissingCharacterByName;

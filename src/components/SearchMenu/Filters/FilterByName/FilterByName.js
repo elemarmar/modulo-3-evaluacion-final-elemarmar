@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './FilterByName.module.scss';
+import PropTypes from 'prop-types';
 
 const Filters = (props) => {
   const handleInput = (ev) => {
@@ -16,5 +17,8 @@ const Filters = (props) => {
     </div>
   );
 };
-
+Filters.propTypes = {
+  handleFilter: PropTypes.func,
+  nameFilter: PropTypes.string,
+};
 export default Filters;

@@ -5,6 +5,7 @@ import FilterByGender from './FilterByGender/FilterByGender';
 import FilterBySpecies from './FilterBySpecies/FilterBySpecies';
 import FilterByStatus from './FilterByStatus/FilterByStatus';
 import OrderName from './OrderName/OrderName';
+import PropTypes from 'prop-types';
 
 const Filters = (props) => {
 
@@ -31,5 +32,9 @@ const Filters = (props) => {
     </form>
   );
 };
-
+Filters.propTypes = {
+  handleFilter: PropTypes.func,
+  orderCharacters: PropTypes.func,
+  filters: PropTypes.object
+};
 export default Filters;

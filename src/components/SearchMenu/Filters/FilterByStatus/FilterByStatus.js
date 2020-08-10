@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from '../../../../stylesheets/SelectControls.module.css';
+import PropTypes from 'prop-types';
 
 const FilterByStatus = (props) => {
   const handleSelect = (ev) => {
@@ -26,5 +27,8 @@ const FilterByStatus = (props) => {
     </>
   );
 };
-
+FilterByStatus.propTypes = {
+  handleFilter: PropTypes.func,
+  statusFilter: PropTypes.string,
+};
 export default FilterByStatus;

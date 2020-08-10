@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './CharacterDetailAuthor.module.css';
 import { Link } from 'react-router-dom';
 import avatar from '../../../assets/images/author-portrait.png';
+import PropTypes from 'prop-types';
 
 
 
@@ -63,5 +64,7 @@ const CharacterDetailAuthor = (props) => {
 
   return <>{renderCharacter()}</>;
 };
-
+CharacterDetailAuthor.propTypes = {
+  character: PropTypes.object,
+};
 export default CharacterDetailAuthor;

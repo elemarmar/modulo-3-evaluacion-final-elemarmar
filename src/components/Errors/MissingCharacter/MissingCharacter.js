@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './MissingCharacter.module.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const MissingCharacter = (props) => {
   return (
@@ -13,6 +14,10 @@ const MissingCharacter = (props) => {
       <Link className={classes.Link}  to='/search'>Go back</Link>
     </section>
   );
+};
+
+MissingCharacter.propTypes = {
+  missingId: PropTypes.string
 };
 
 export default MissingCharacter;

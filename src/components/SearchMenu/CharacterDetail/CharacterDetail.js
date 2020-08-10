@@ -5,6 +5,8 @@ import Api from '../../../services/getDataFromApi';
 import MissingCharacter from '../../../components/Errors/MissingCharacter/MissingCharacter';
 import Loader from '../../UI/Loader/Loader';
 import './status.css';
+import PropTypes from 'prop-types';
+
 
 const CharacterDetail = (props) => {
   const [foundCharacter, setFoundCharacter] = useState('');
@@ -79,4 +81,7 @@ const CharacterDetail = (props) => {
   return <>{renderCharacter()}</>;
 };
 
+CharacterDetail.propTypes = {
+  characterId: PropTypes.string,
+};
 export default CharacterDetail;

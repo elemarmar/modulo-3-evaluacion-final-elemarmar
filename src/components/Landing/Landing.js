@@ -4,7 +4,7 @@ import classes from './Landing.module.css';
 import { Link } from 'react-router-dom';
 import '../../stylesheets/Background.scss';
 
-const Landing = (props) => {
+const Landing = () => {
   return (
     <>
       <div className={classes.Landing}>
