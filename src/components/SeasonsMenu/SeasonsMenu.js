@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './SeasonsMenu.module.css';
-import Title from '../../assets/images/website-title.png';
 import SeasonsList from './SeasonsList/SeasonsList';
 
 const SeasonsMenu = (props) => {

@@ -126,7 +126,6 @@ const App = (props) => {
         });
     }
     return filteredCharacters;
-    console.log(characters);
   };
 
   const orderCharacters = (state) => {

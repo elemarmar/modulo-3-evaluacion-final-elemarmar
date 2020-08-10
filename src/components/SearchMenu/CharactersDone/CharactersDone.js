@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './CharactersDone.module.css';
-import { Link } from 'react-router-dom';
 
 const CharactersDone = (props) => {
   return (

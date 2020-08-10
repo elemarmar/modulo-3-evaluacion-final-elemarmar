@@ -7,9 +7,7 @@ import '../../stylesheets/Background.scss';
 const SearchMenu = (props) => {
 
   const renderOrderedCharacters = (state) => {
-    console.log('se inicia');
 if (props.filters.order) {
-  console.log('por nombre');
    return props.charactersData.sort(function(a, b) {
     var nameA = a.name.toUpperCase(); // ignore upper and lowercase
     var nameB = b.name.toUpperCase(); // ignore upper and lowercase
@@ -25,7 +23,6 @@ if (props.filters.order) {
   });
 
 } else {
-  console.log('por id');
   return props.charactersData.sort(function (a, b) {
     return a.id - b.id;
   });
@@ -33,7 +30,6 @@ if (props.filters.order) {
 }
 
   }
-  console.log(props.charactersData);
   return (
     <section className={classes.SearchMenu}>
       <h2 className={classes.SeasonTitle}>Season {props.filters.season}</h2>

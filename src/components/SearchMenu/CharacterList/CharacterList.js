@@ -21,13 +21,11 @@ const CharacterList = (props) => {
   };
 
   const handleClick = () => {
-    console.log(shownCharacters);
       setShownCharacters(shownCharacters + 20);
 
   };
 
   const renderCharacters = () => {
-    console.log('hi', charactersData)
     if (charactersData.length > 0) {
       return filterData().map((character) => {
         return (
@@ -69,7 +67,3 @@ const CharacterList = (props) => {
 };
 
 export default CharacterList;
-
-{
-  /* <MissingCharacterByName nameFilter={props.nameFilter} /> */
-}

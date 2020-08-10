@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import classes from './CharacterDetailAuthor.module.css';
 import { Link } from 'react-router-dom';
+import avatar from '../../../assets/images/author-portrait.png';
 
 
 
@@ -16,8 +17,9 @@ const CharacterDetailAuthor = (props) => {
                   <div className={classes.CharacterCard}>
 
                     <img
-                      src={props.character.image}
+                      src={avatar}
                       className={classes.CharacterPic}
+                      alt={props.character.name}
                     ></img>
                                       <p className={classes.Status}>
                         {props.character.status}
@@ -37,13 +39,13 @@ const CharacterDetailAuthor = (props) => {
                       <strong>Species:</strong> {props.character.species}
                     </p>
                     <p>
-                      <strong><i class="fas fa-venus"></i></strong> {props.character.gender}
+                      <strong><i className="fas fa-venus"></i></strong> {props.character.gender}
                     </p>
                     <p>
-                      <strong><i class="fas fa-map-marker-alt"></i></strong> {props.character.origin.name}
+                      <strong><i className="fas fa-map-marker-alt"></i></strong> {props.character.origin.name}
                     </p>
                     <p className={classes.Description}>{props.character.description}</p>
-                    <a className={classes.github} href="https://github.com/elemarmar" target="_blank" title="Go to Elena's Github"><i class="fab fa-github"></i></a>
+                    <a rel="noopener noreferrer" className={classes.github} href="https://github.com/elemarmar" target="_blank" title="Go to Elena's Github"><i className="fab fa-github"></i></a>
                   </div>
                 </div>
               </div>

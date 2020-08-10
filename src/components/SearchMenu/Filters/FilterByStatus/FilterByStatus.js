@@ -10,13 +10,12 @@ const FilterByStatus = (props) => {
   };
   return (
     <>
-      <label for='status-select'>Choose status:</label>
+      <label htmlFor='status-select'>Choose status:</label>
       <select
         name='status'
         className={classes.selectControl}
         id='status-select'
         onChange={handleSelect}
-        value={props.statusFilter}
         defaultValue={props.statusFilter}
       >
         <option value='All'>All</option>

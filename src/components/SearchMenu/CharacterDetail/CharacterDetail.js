@@ -12,21 +12,15 @@ const CharacterDetail = (props) => {
   useEffect(() => {
     Api.id(props.characterId)
       .then((data) => {
-        console.log('data', data);
         setFoundCharacter(data);
       })
-      .then(() => {
-        console.log('second', foundCharacter);
-      });
   }, [props.characterId]);
 
   const renderCharacter = () => {
     if (foundCharacter) {
       if (foundCharacter.error) {
-        console.log('foundCharacter da error');
         return <MissingCharacter missingId={props.characterId} />;
       } else {
-        console.log('foundCharacter existe');
         return (
           <>
             <div className={classes.FlipContainer}>
@@ -36,6 +30,7 @@ const CharacterDetail = (props) => {
                     <img
                       src={foundCharacter.image}
                       className={classes.CharacterPic}
+                      alt={foundCharacter.name}
                     ></img>
                  <p className={`${classes.Status} ${foundCharacter.status}`}>
                         {foundCharacter.status}

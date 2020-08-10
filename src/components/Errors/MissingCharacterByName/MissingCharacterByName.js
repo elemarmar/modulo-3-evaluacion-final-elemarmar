@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './MissingCharacterByName.module.css';
-import { Link } from 'react-router-dom';
 
 const MissingCharacterByName = (props) => {
   return (
