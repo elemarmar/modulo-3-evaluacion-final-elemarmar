@@ -1,68 +1,106 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rick and Morty Character finder
 
-## Available Scripts
+<img src="/Users/elenamartinezmarin/Library/Mobile Documents/com~apple~CloudDocs/wd/modulo-3-evaluacion-final-elemarmar/superhappy.gif" alt="superhappy" width="200px" />
 
-In the project directory, you can run:
+1. [Objetivo](#Objetivo)
+2. [Características](#Características)
+3. [Instalación](#Instalación)
 
-### `yarn start`
+> ⚠️ **Esta página todavía no cuenta con una versión adaptada a dispositivos móviles.**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Objetivo
 
-### `yarn test`
+El objetivo de esta aplicación web era crear un buscador de personajes de la serie Rick & Morty. En principio:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- se debían **mostrar los primeros veinte personajes** de la [rickandmortyapi](https://rickandmortyapi.com/documentation/).
+- se debe poder hacer click sobre una tarjeta de personaje para que se nos muestre la **tarjeta con más información** (haciendo uso de **React router**)
+- se debe poder **filtrar** los personajes por un input de texto
+- se debe poder **ordenar** alfabéticamente los personajes
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Características
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Características técnicas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para la realización de la página he manejado especialmente **React**, **javascript** y **css** (**sass**).
 
-### `yarn eject`
+### Características de la página
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### El Landing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="/Users/elenamartinezmarin/Library/Application Support/typora-user-images/image-20200810123255621.png" alt="image-20200810123255621" width="400px" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+La página cuenta con un landing que nos muestra escenas de la serie. Al hacer click sobre el televisor, nos lleva a la sección de [temporadas](#Temporadas).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Temporadas
 
-## Learn More
+<img src="/Users/elenamartinezmarin/Library/Application Support/typora-user-images/image-20200810123423997.png" alt="image-20200810123423997" width="400px" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+En la sección de temporadas podemos elegir una temporada para evitar spoilers. Si elegimos la temporada 1, no veremos personajes que aparezcan en temporadas más avanzadas.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> 👉🏻 **Este es un paso necesario.** Si el usuario intentara meterse a la sección de Búsqueda sin elegir una temporada, automáticamente la página lo redirigiría a la sección de temporadas.
 
-### Code Splitting
+#### Búsqueda
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<img src="/Users/elenamartinezmarin/Library/Application Support/typora-user-images/image-20200810123605309.png" alt="image-20200810123605309" width="400px" />
 
-### Analyzing the Bundle Size
+Una vez que accedemos a la sección de búsqueda veremos los 20 perimeros personajes.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+> Nótese como la página nos indica debajo del título en qué temporada estamos.
 
-### Making a Progressive Web App
+En esta sección podemos:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- filtrar por nombre --> nos aparecerían TODOS (no sólo 20) personajes que coincidan con dicha búsqueda.
+- filtrar por especie.
+- filtrar por género.
+- filtrar por estado (vivo, muerto, desconocido).
+- ordenar los resultados alfabéticamente.
+- pulsar sobre el botón "**load more**" carga más personajes en la página 
+- pulsar sobre una tarjeta de personaje, para ver la tarjeta detallada
 
-### Advanced Configuration
+#### Tarjeta detallada
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<img src="/Users/elenamartinezmarin/Library/Application Support/typora-user-images/image-20200810123849565.png" alt="image-20200810123849565" width="250px" />
 
-### Deployment
+<img src="/Users/elenamartinezmarin/Library/Application Support/typora-user-images/image-20200810123913115.png" alt="image-20200810123913115" width="250px" />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Al hacer hover sobre la tarjeta de personaje, la tarjeta se da la vuelta y nos muestra algo más de información sobre el personaje.
 
-### `yarn build` fails to minify
+> El fondo de la tarjeta nos indica si:
+>
+> - está vivo: verde
+> - está muerto: rojo
+> - se desconoce: amarillo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Si pulsamos en el botón **Go back** nos lleva atrás.
+
+### About 
+
+<img src="/Users/elenamartinezmarin/Library/Application Support/typora-user-images/image-20200810124039566.png" alt="image-20200810124039566" width="500px" />
+
+En la sección about se puede ver una tarjeta con un dibujo estilo Rick & Morty de la autora, con información sobre ella y un link a su GitHub. Dibujo hecho a mano inspirado en el personaje de Tammy.
+
+### El menú de navegación
+
+![image-20200810124446826](/Users/elenamartinezmarin/Library/Application Support/typora-user-images/image-20200810124446826.png)
+
+El menú de navegación nos permite en todo momento navegar por las distintas páginas de la aplicación web. Muestra gifs de Rick & Morty al hacer hover.
+
+## Instalación
+
+1. Descargar el repositorio.
+
+2. Tener instalado en el ordenador node
+
+3. instalar las dependencias con `npm install`
+
+4. correr `npm start`
+
+   ![ok](/Users/elenamartinezmarin/Library/Mobile Documents/com~apple~CloudDocs/wd/modulo-3-evaluacion-final-elemarmar/ok.gif)
+
+---
+
+Este proyecto ha sido diseñado y desarrollado por [Elena Martínez Marín](https://github.com/elemarmar). 
