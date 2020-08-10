@@ -209,6 +209,7 @@
   .Front,
   .Back {
     -webkit-backface-visibility: hidden;
+    transform: rotateX(0deg);
     position: absolute;
     top: 0;
     left: 0;
@@ -227,6 +228,21 @@
     font-size: 14px;
     -webkit-transform: rotateY(180deg);
     background:linear-gradient(135deg, #42e695 0%,#3bb2b8 100%);
+  }
+
+  .Back::before {
+    content:'';
+    width: 120px;
+    height: 120px;
+    background-image: url('../../../assets/images/card-icon.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: .3;
+    z-index: -1;
   }
   
   /**********/
