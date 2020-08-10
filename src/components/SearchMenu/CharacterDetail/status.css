@@ -1,0 +1,87 @@
+p.Alive {
+    font-family: 'calligraphrregular';
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    color: rgba(255, 255, 255, 0.507);
+    /* background-color: rgba(0, 0, 0, 0.411); */
+    padding: 2px 6px;
+  }
+  
+  p.Alive::after {
+    position: absolute;
+    top: -2px;
+    right: -30px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: solid 1px rgba(65, 63, 63, 0.507);
+    border-radius: 50%;
+    background: rgb(139,224,39);
+    animation: pulse 2s linear 1s infinite;
+}
+  
+p.Dead {
+    font-family: 'calligraphrregular';
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    color: rgba(255, 255, 255, 0.507);
+    /* background-color: rgba(0, 0, 0, 0.411); */
+    padding: 2px 6px;
+  }
+  
+  p.Dead::after {
+    position: absolute;
+    top: -2px;
+    right: -30px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: solid 1px rgba(65, 63, 63, 0.507);
+    border-radius: 50%;
+    background: rgb(224, 39, 39);
+    animation: pulse 2s linear 1s infinite;
+}
+
+p.unknown {
+    font-family: 'calligraphrregular';
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    color: rgba(255, 255, 255, 0.507);
+    /* background-color: rgba(0, 0, 0, 0.411); */
+    padding: 2px 6px;
+  }
+  
+  p.unknown::after {
+    position: absolute;
+    top: -2px;
+    right: -30px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: solid 1px rgba(65, 63, 63, 0.507);
+    border-radius: 50%;
+    background: rgb(224, 221, 39);
+    animation: pulse 2s linear 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow:0 0 2px #4f534f, inset 0 0 2px #4f534f; }
+    50% { box-shadow:0 0 16px #4f534f, inset 0 0 14px #4f534f; }
+    100% { box-shadow:0 0 2px #4f534f, inset 0 0 2px #4f534f; }
+  }
+  
+
+div.Dead {
+    background:linear-gradient(135deg, #F5515F 0%,#A1051D 100%);
+    color: #530713;
+}
+
+div.unknown {
+    background:linear-gradient(135deg, #fad961 0%,#f76b1c 100%);
+color: #d45e19;}

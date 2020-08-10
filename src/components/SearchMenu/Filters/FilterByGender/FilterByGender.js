@@ -10,13 +10,12 @@ const FilterByGender = (props) => {
   };
   return (
     <>
-      <label for='gender-select'>Choose gender:</label>
+      <label htmlFor='gender-select'>Choose gender:</label>
       <select
         className={classes.selectControl}
         name='gender'
         id='gender-select'
         onChange={handleSelect}
-        value={props.genderFilter}
         defaultValue={props.genderFilter}
       >
         <option value='All'>All</option>

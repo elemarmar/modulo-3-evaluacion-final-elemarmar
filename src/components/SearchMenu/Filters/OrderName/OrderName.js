@@ -2,9 +2,8 @@ import React from 'react';
 import classes from './OrderName.module.css';
 
 const OrderName = (props) => {
-  const handleInput = () => {
-    // if checked --> sort alphabetically
-    // if not checked --> sort by id
+  const handleInput = (ev) => {
+    props.orderCharacters(ev.target.checked);
   };
 
   return (

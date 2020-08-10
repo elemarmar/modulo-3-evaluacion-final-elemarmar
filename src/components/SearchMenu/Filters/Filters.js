@@ -7,12 +7,7 @@ import FilterByStatus from './FilterByStatus/FilterByStatus';
 import OrderName from './OrderName/OrderName';
 
 const Filters = (props) => {
-  const handleInput = (ev) => {
-    props.handleFilter({
-      value: ev.target.value,
-      key: 'name',
-    });
-  };
+
 
   return (
     <form className={classes.Filters} onSubmit={(ev) => ev.preventDefault()}>
@@ -32,7 +27,7 @@ const Filters = (props) => {
         handleFilter={props.handleFilter}
         statusFilter={props.filters.status}
       />
-      <OrderName />
+      <OrderName orderCharacters={props.orderCharacters}/>
     </form>
   );
 };

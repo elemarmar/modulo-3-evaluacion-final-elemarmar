@@ -6,11 +6,11 @@ const MissingPage = (props) => {
   return (
     <section className={classes.Missing}>
       <h2>Hey you,</h2>
-      <p>Where do you think you are going???</p>
-      <p>The page you are looking for doesn't exist</p>
+      <h3>Where do you think you are going???</h3>
+      <p>The page you are looking for <strong>doesn't exist</strong></p>
       <span className={classes.Icon}> </span>
-      <p>some random quote</p>
-      <Link to='/search'>Go back</Link>
+
+      <Link className={classes.Link} to='/search'>Go back</Link>
     </section>
   );
 };

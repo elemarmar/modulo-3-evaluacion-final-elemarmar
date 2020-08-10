@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Landing.module.css';
-import Title from '../../assets/images/website-title.png';
+
 import { Link } from 'react-router-dom';
 import '../../stylesheets/Background.scss';
 
