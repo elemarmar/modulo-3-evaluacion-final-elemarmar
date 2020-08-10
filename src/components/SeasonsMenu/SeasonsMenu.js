@@ -13,10 +13,7 @@ const SeasonsMenu = (props) => {
         </p>
         <span className={classes.Icon}></span>
         <p>
-          In order to not get spoiled with characters that do not appear until
-          later in the series, you can choose the season you are at and all
-          characters will be filtered by that season. If you want to see all
-          characters, choose season 4
+          Choose the season and you'll only see characters that appear up to that season! If you choose season 4, you'll see all characters.
         </p>
       </div>
 

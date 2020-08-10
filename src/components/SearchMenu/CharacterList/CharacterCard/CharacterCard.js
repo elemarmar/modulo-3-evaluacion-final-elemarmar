@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './CharacterCard.module.css';
 import { Link } from 'react-router-dom';
+import './liststatus.css';
 import PropTypes from 'prop-types';
 
 const randomN = () => {
@@ -20,6 +21,7 @@ const CharacterCard = (props) => {
     <Link to={`/search/${props.id}`}>
       <article style={divStyle} className={classes.CharacterCard}>
         <div style={picStyle} className={classes.CharacterCardContainer}>
+          <span className={`is${props.status}`}></span>
         <span  className={classes.CharacterPic}></span>
         <h4>{props.name}</h4>
         </div>

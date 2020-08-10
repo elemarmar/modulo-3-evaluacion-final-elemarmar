@@ -79,17 +79,7 @@
     font-size: 20px;
   }
   
-  .CharacterQuotes {
-    font-family: 'calligraphrregular';
-    text-align: center;
-    flex-basis: 100%;
-    background-color: rgb(178, 247, 74);
-    color: rgb(75, 74, 74);
-    font-weight: bold;
-    font: 22px;
-    position: relative;
-  }
-  
+
   .Links {
     width: 200px;
     list-style-type: none;
@@ -181,13 +171,14 @@
   .FlipContainer {
     -webkit-perspective: 1000;
     background: transparent;
-    margin: 200px auto 20px;
+    margin: 280px auto 20px;
   }
   
   /* flip the pane when clicked */
   .FlipContainer:hover .Flipper,
   .FlipContainer.hover .Flipper {
     -webkit-transform: rotateY(180deg);
+
   }
   
   .FlipContainer,

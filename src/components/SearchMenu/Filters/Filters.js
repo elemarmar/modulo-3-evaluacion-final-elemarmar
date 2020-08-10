@@ -28,7 +28,7 @@ const Filters = (props) => {
         handleFilter={props.handleFilter}
         statusFilter={props.filters.status}
       />
-      <OrderName orderCharacters={props.orderCharacters}/>
+      <OrderName orderCharacters={props.orderCharacters} ordered={props.filters.order}/>
     </form>
   );
 };

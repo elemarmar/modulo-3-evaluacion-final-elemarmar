@@ -26,12 +26,13 @@ position: relative;
 }
 .CharacterCard h4 {
     display: inline-block;
+    font-family: 'calligraphrregular';
     height: 100%;
     width: 100%;
     background-color: rgba(0,0,0,.4);
     margin: 0;
-    font-size: 13px;
-    padding: 2px;
+    font-size: 14px;
+    padding: 4px 4px 0;
 }
 
 .CharacterPic {

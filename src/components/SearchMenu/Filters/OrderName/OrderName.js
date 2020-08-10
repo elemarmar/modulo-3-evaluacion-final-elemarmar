@@ -10,7 +10,7 @@ const OrderName = (props) => {
   return (
     <>
       <div className={classes.OrderName}>
-        <input id='order-checkbox' type='checkbox' onChange={handleInput} />
+        <input id='order-checkbox' type='checkbox' onChange={handleInput} defaultChecked={props.ordered}/>
         Order by name
         <label htmlFor='order-checkbox'>Order by name</label>
       </div>

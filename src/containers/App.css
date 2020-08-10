@@ -20,3 +20,13 @@
 .Title img {
   width: 100%;
 }
+
+@media (max-width: 400px) {
+  .Title {
+    width: 300px;
+
+  }
+  .Title img {
+    width: 100%;
+  }
+}

@@ -9,8 +9,8 @@
 .Landing {
   background-image: url(../../assets/images/landing-background.png);
   background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: fill;
+  background-repeat: repeat-x;
+
   min-height: 100vh;
   position: relative;}
 
@@ -62,3 +62,5 @@
   cursor: pointer;
   z-index: 10;
 }
+
+
