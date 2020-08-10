@@ -8,7 +8,6 @@ const CharactersDone = (props) => {
       <h6>You reached the end</h6>
       <p>Literally, no more characters to be shown.</p>
       <span className={classes.Icon}> </span>
-      <p>some random quote</p>
     </section>
   );
 };

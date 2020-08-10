@@ -11,6 +11,7 @@ import Landing from '../components/Landing/Landing';
 import Search from '../components/SearchMenu/SearchMenu';
 import SeasonsMenu from '../components/SeasonsMenu/SeasonsMenu';
 import CharacterDetail from '../components/SearchMenu/CharacterDetail/CharacterDetail';
+import CharacterDetailAuthor from '../components/SearchMenu/CharacterDetail/CharacterDetailAuthor';
 import MissingPage from '../components/Errors/MissingPage/MissingPage';
 import Nav from '../components/Nav/Nav';
 import Loader from '../components/UI/Loader/Loader';
@@ -18,6 +19,7 @@ import Loader from '../components/UI/Loader/Loader';
 // data & services
 import Api from '../services/getDataFromApi';
 import author from '../data/author.json';
+
 
 const App = (props) => {
   // states
@@ -31,6 +33,7 @@ const App = (props) => {
   const [statusFilter, setStatusFilter] = useState('All');
   const [genderFilter, setGenderFilter] = useState('All');
   const [seasonFilter, setSeasonFilter] = useState();
+  const [isOrderedByName, setIsOrderedByName] = useState(false);
 
   // to create less attributes for children components
   const filters = {
@@ -39,6 +42,7 @@ const App = (props) => {
     status: statusFilter,
     gender: genderFilter,
     season: seasonFilter,
+    order: isOrderedByName,
   };
 
   // fetch
@@ -125,6 +129,16 @@ const App = (props) => {
     console.log(characters);
   };
 
+  const orderCharacters = (state) => {
+
+    if (state) {
+      setIsOrderedByName(true);
+    } else {
+      setIsOrderedByName(false);
+    }
+
+  }
+
   return (
     <>
       <main className='App'>
@@ -139,6 +153,9 @@ const App = (props) => {
             <img src={Title} />
           </h1>
         </Link>
+        {/* <audio controls preload="metadata">
+  <source src={introSong} type="audio/mp3" />
+    </audio> */}
 
         <Switch>
           <Route
@@ -165,6 +182,7 @@ const App = (props) => {
                     handleFilter={handleFilter}
                     updatePage={updatePage}
                     pageNumber={pageNumber}
+                    orderCharacters={orderCharacters}
                   />
                 );
               }}
@@ -179,7 +197,7 @@ const App = (props) => {
           />
           <Route
             path='/about'
-            render={() => <CharacterDetail character={author} />}
+            render={() => <CharacterDetailAuthor character={author} />}
           />
 
           <Route path='/' exact component={Landing} />

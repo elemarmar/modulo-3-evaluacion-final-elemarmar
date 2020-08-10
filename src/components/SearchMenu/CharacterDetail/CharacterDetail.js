@@ -3,6 +3,8 @@ import classes from './CharacterDetail.module.css';
 import { Link } from 'react-router-dom';
 import Api from '../../../services/getDataFromApi';
 import MissingCharacter from '../../../components/Errors/MissingCharacter/MissingCharacter';
+import Loader from '../../UI/Loader/Loader';
+import './status.css';
 
 const CharacterDetail = (props) => {
   const [foundCharacter, setFoundCharacter] = useState('');
@@ -35,19 +37,19 @@ const CharacterDetail = (props) => {
                       src={foundCharacter.image}
                       className={classes.CharacterPic}
                     ></img>
+                 <p className={`${classes.Status} ${foundCharacter.status}`}>
+                        {foundCharacter.status}
+                    </p>
                     <div className={classes.CharacterName}>
                       <h4>{foundCharacter.name}</h4>
                     </div>
                   </div>
                 </div>
-                <div className={classes.Back}>
+                <div className={`${classes.Back} ${foundCharacter.status}`}>
                   <div className={classes.CharacterInfo}>
                     <h2 className={classes.CharacterName}>
                       {foundCharacter.name}
                     </h2>
-                    <p>
-                      <strong>Status:</strong> {foundCharacter.status}
-                    </p>
                     <p>
                       <strong>Species:</strong> {foundCharacter.species}
                     </p>
@@ -75,7 +77,7 @@ const CharacterDetail = (props) => {
         );
       }
     } else {
-      return <p>LOADING</p>;
+      return <Loader />;
     }
   };
 

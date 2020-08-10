@@ -1,0 +1,14 @@
+#amplitude-play-pause{
+    width: 58px;
+    height: 59px;
+    cursor: pointer;
+    float: left;
+}
+.amplitude-paused{
+    background-image: url('../images/yellow-play.png');
+    background-repeat: no-repeat;
+}
+.amplitude-playing{
+    background-image: url('../images/yellow-pause.png');
+    background-repeat: no-repeat;
+}

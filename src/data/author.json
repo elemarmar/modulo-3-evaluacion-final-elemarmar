@@ -1,12 +1,11 @@
 {
-  "name": "Elena",
-  "status": "alive",
+  "name": "Elena Martinez Marin",
+  "status": "Alive",
   "species": "Human",
   "gender": "Female",
   "origin": {
-    "name": "Earth, Spain, Madrid"
+    "name": "Earth, Spain (Madrid)"
   },
-  "episode": [],
-  "description": "This is the description",
-  "image": "https://drive.google.com/file/d/13EMVWUlKmHY0sXsT1XiwYeRjAeUVPyq7/view?usp=sharing"
+  "description": "She's a front-end developer who loves learning languages and hiking mountains.",
+  "image": "https://raw.githubusercontent.com/Adalab/modulo-3-evaluacion-final-elemarmar/master/src/assets/images/author-portrait.png"
 }

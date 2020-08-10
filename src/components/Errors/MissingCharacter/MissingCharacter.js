@@ -10,8 +10,7 @@ const MissingCharacter = (props) => {
         No character with the id <strong>{props.missingId}</strong> was found
       </p>
       <span className={classes.Icon}> </span>
-      <p>some random quote</p>
-      <Link to='/search'>Go back</Link>
+      <Link className={classes.Link}  to='/search'>Go back</Link>
     </section>
   );
 };

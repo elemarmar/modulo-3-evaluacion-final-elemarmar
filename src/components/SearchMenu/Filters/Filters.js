@@ -32,7 +32,7 @@ const Filters = (props) => {
         handleFilter={props.handleFilter}
         statusFilter={props.filters.status}
       />
-      <OrderName />
+      <OrderName orderCharacters={props.orderCharacters}/>
     </form>
   );
 };
