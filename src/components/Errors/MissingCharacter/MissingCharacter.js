@@ -11,13 +11,15 @@ const MissingCharacter = (props) => {
         No character with the id <strong>{props.missingId}</strong> was found
       </p>
       <span className={classes.Icon}> </span>
-      <Link className={classes.Link}  to='/search'>Go back</Link>
+      <Link className={classes.Link} to='/search'>
+        Go back
+      </Link>
     </section>
   );
 };
 
 MissingCharacter.propTypes = {
-  missingId: PropTypes.string
+  missingId: PropTypes.string,
 };
 
 export default MissingCharacter;

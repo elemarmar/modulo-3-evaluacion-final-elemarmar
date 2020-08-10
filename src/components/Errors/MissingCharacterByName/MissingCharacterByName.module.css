@@ -12,7 +12,8 @@
   text-align: center;
 }
 
-.Missing h2, h3 {
+.Missing h2,
+h3 {
   font-family: 'calligraphrregular';
 }
 
@@ -32,7 +33,6 @@
   margin: auto;
   margin-top: 50px;
 }
-
 
 .Link {
   font-family: 'calligraphrregular';

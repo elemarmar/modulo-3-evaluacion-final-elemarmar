@@ -239,11 +239,11 @@
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  background:linear-gradient(135deg, #42e695 0%,#3bb2b8 100%);
+  background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%);
 }
 
 .Back::before {
-  content:'';
+  content: '';
   width: 120px;
   height: 120px;
   background-image: url('../../../assets/images/card-icon.png');
@@ -253,7 +253,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  opacity: .6;
+  opacity: 0.6;
   z-index: -1;
 }
 
@@ -307,8 +307,8 @@
 
 .Back .CharacterName {
   background-color: transparent;
-margin-top: 30px;
-font-size: 22px;
+  margin-top: 30px;
+  font-size: 22px;
   text-align: center;
   display: block;
   color: white;
@@ -327,8 +327,8 @@ font-size: 22px;
 .CharacterNameBack {
   font-size: 19px;
   color: rgba(41, 41, 41, 0.849);
-font-family: 'calligraphrregular';;
-text-align: center;
+  font-family: 'calligraphrregular';
+  text-align: center;
   width: 100%;
   padding: 2px 0;
   margin: 0;
@@ -383,15 +383,20 @@ p.Description {
   height: 20px;
   border: solid 1px rgba(65, 63, 63, 0.507);
   border-radius: 50%;
-  background: rgb(139,224,39);
+  background: rgb(139, 224, 39);
   animation: pulse 2s linear 1s infinite;
 }
 
-
 @keyframes pulse {
-  0% { box-shadow:0 0 8px #348d40, inset 0 0 8px #348d40; }
-  50% { box-shadow:0 0 16px #348d40, inset 0 0 14px #348d40; }
-  100% { box-shadow:0 0 8px #348d40, inset 0 0 8px #348d40; }
+  0% {
+    box-shadow: 0 0 8px #348d40, inset 0 0 8px #348d40;
+  }
+  50% {
+    box-shadow: 0 0 16px #348d40, inset 0 0 14px #348d40;
+  }
+  100% {
+    box-shadow: 0 0 8px #348d40, inset 0 0 8px #348d40;
+  }
 }
 
 .github {
@@ -400,11 +405,10 @@ p.Description {
   display: block;
   margin: auto;
   text-align: center;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .github:hover {
   cursor: pointer;
   color: white;
 }
-

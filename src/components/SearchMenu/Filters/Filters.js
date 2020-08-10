@@ -8,8 +8,6 @@ import OrderName from './OrderName/OrderName';
 import PropTypes from 'prop-types';
 
 const Filters = (props) => {
-
-
   return (
     <form className={classes.Filters} onSubmit={(ev) => ev.preventDefault()}>
       <FilterByName
@@ -28,13 +26,16 @@ const Filters = (props) => {
         handleFilter={props.handleFilter}
         statusFilter={props.filters.status}
       />
-      <OrderName orderCharacters={props.orderCharacters} ordered={props.filters.order}/>
+      <OrderName
+        orderCharacters={props.orderCharacters}
+        ordered={props.filters.order}
+      />
     </form>
   );
 };
 Filters.propTypes = {
   handleFilter: PropTypes.func,
   orderCharacters: PropTypes.func,
-  filters: PropTypes.object
+  filters: PropTypes.object,
 };
 export default Filters;

@@ -47,6 +47,6 @@ const Season = (props) => {
 Season.propTypes = {
   seasonId: PropTypes.string,
   handleFilter: PropTypes.func,
-  filters: PropTypes.object
+  filters: PropTypes.object,
 };
 export default Season;

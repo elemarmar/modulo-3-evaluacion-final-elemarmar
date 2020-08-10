@@ -13,7 +13,8 @@ const SeasonsMenu = (props) => {
         </p>
         <span className={classes.Icon}></span>
         <p>
-          Choose the season and you'll only see characters that appear up to that season! If you choose season 4, you'll see all characters.
+          Choose the season and you'll only see characters that appear up to
+          that season! If you choose season 4, you'll see all characters.
         </p>
       </div>
 

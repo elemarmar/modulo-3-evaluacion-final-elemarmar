@@ -1,21 +1,19 @@
 .CharacterCard {
-
-    border-radius: 3px;
-    width: 100px;
-    height: 140px;
-    color: white;
-    background-image: url('../../../../assets/gifs/relaxed.gif');
-    background-position: center;
-background-size: 140%;
-position: relative;
+  border-radius: 3px;
+  width: 100px;
+  height: 140px;
+  color: white;
+  background-image: url('../../../../assets/gifs/relaxed.gif');
+  background-position: center;
+  background-size: 140%;
+  position: relative;
   overflow: hidden;
-  transition: all .8s ease;
+  transition: all 0.8s ease;
   margin: 10px;
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-
 }
 .CharacterCardContainer {
   border-radius: 3px;
@@ -25,67 +23,72 @@ position: relative;
   background-size: 140%;
 }
 .CharacterCard h4 {
-    display: inline-block;
-    font-family: 'calligraphrregular';
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,.4);
-    margin: 0;
-    font-size: 14px;
-    padding: 4px 4px 0;
+  display: inline-block;
+  font-family: 'calligraphrregular';
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0;
+  font-size: 14px;
+  padding: 4px 4px 0;
 }
 
 .CharacterPic {
-    display: block;
-    border-radius: 3px;
-    width: 100px;
-    height: 100px;
+  display: block;
+  border-radius: 3px;
+  width: 100px;
+  height: 100px;
 }
 
-
 .CharacterCard:after {
-    content: "";
-    position: absolute;
-    top: -110%;
-    left: -210%;
-    width: 200%;
-    height: 200%;
-    opacity: 0;
-    transform: rotate(30deg);
-    
-    background: rgba(255, 255, 255, 0.13);
-    background: linear-gradient(
-      to right, 
-      rgba(255, 255, 255, 0.13) 0%,
-      rgba(255, 255, 255, 0.13) 77%,
-      rgba(255, 255, 255, 0.5) 92%,
-      rgba(255, 255, 255, 0.0) 100%
-    );
-  }
+  content: '';
+  position: absolute;
+  top: -110%;
+  left: -210%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
 
-  .CharacterCard:hover:after {
-    opacity: 1;
-    top: -30%;
-    left: -30%;
-    transition-property: left, top, opacity;
-    transition-duration: 0.7s, 0.7s, 0.15s;
-    transition-timing-function: ease;
-  }
+  background: rgba(255, 255, 255, 0.13);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
 
-  .CharacterCard:hover {
-    border: 2px solid rgb(255, 236, 128);
-  }
+.CharacterCard:hover:after {
+  opacity: 1;
+  top: -30%;
+  left: -30%;
+  transition-property: left, top, opacity;
+  transition-duration: 0.7s, 0.7s, 0.15s;
+  transition-timing-function: ease;
+}
 
-  .CharacterCard:active:after {
-    opacity: 0;
-  }
+.CharacterCard:hover {
+  border: 2px solid rgb(255, 236, 128);
+}
 
-.CharacterCard:hover  {
-    background-size: 170%;
-    cursor: pointer;
+.CharacterCard:active:after {
+  opacity: 0;
+}
+
+.CharacterCard:hover {
+  background-size: 170%;
+  cursor: pointer;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px);}
-  to { opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

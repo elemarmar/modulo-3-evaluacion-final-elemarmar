@@ -20,13 +20,11 @@ import Loader from '../components/UI/Loader/Loader';
 import Api from '../services/getDataFromApi';
 import author from '../data/author.json';
 
-
 const episodeBreak = {
   season1: 12,
   season2: 22,
-  season3: 32
-}
-
+  season3: 32,
+};
 
 const App = (props) => {
   // states
@@ -77,8 +75,6 @@ const App = (props) => {
       setSeasonFilter(data.value);
     }
   };
-
-
 
   const renderFilteredCharacters = () => {
     let filteredCharacters = [];
@@ -137,7 +133,7 @@ const App = (props) => {
     } else {
       setIsOrderedByName(false);
     }
-  }
+  };
 
   return (
     <>
@@ -150,7 +146,7 @@ const App = (props) => {
 
         <Link to='/'>
           <h1 className='Title'>
-            <img src={Title} alt='Rick and Morty'/>
+            <img src={Title} alt='Rick and Morty' />
           </h1>
         </Link>
 

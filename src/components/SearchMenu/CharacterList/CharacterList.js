@@ -10,8 +10,6 @@ const CharacterList = (props) => {
   const [shownCharacters, setShownCharacters] = useState(20);
   const { charactersData } = props;
 
-
-
   const filterData = () => {
     if (props.nameFilter) {
       return charactersData.slice(0);
@@ -21,8 +19,7 @@ const CharacterList = (props) => {
   };
 
   const handleClick = () => {
-      setShownCharacters(shownCharacters + 20);
-
+    setShownCharacters(shownCharacters + 20);
   };
 
   const renderCharacters = () => {
@@ -39,7 +36,7 @@ const CharacterList = (props) => {
         );
       });
     } else {
-      return <MissingCharacterByName name={props.nameFilter}/>
+      return <MissingCharacterByName name={props.nameFilter} />;
     }
   };
 
@@ -47,7 +44,7 @@ const CharacterList = (props) => {
     if (props.nameFilter) {
       return null;
     } else if (shownCharacters === 600) {
-      return <CharactersDone />
+      return <CharactersDone />;
     } else {
       return (
         <button className={classes.Btn} onClick={handleClick}>

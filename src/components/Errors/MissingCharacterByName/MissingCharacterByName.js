@@ -7,7 +7,8 @@ const MissingCharacterByName = (props) => {
     <section className={classes.Missing}>
       <h2>Hah, did you really think...</h2>
       <p>
-        there could be somebody with the name of <strong>{props.name}</strong> and those characteristics?? 
+        there could be somebody with the name of <strong>{props.name}</strong>{' '}
+        and those characteristics??
         <strong>{props.nameFilter}</strong>??
       </p>
       <span className={classes.Icon}> </span>
@@ -17,7 +18,7 @@ const MissingCharacterByName = (props) => {
 
 MissingCharacterByName.propTypes = {
   name: PropTypes.string,
-  nameFilter: PropTypes.string
+  nameFilter: PropTypes.string,
 };
 
 export default MissingCharacterByName;

@@ -12,7 +12,8 @@
   background-repeat: repeat-x;
 
   min-height: 100vh;
-  position: relative;}
+  position: relative;
+}
 
 .LandingTv {
   position: absolute;
@@ -62,5 +63,3 @@
   cursor: pointer;
   z-index: 10;
 }
-
-

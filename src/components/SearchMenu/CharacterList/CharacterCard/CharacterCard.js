@@ -15,15 +15,15 @@ const CharacterCard = (props) => {
 
   const picStyle = {
     backgroundImage: 'url(' + props.pic + ')',
-  }
+  };
 
   return (
     <Link to={`/search/${props.id}`}>
       <article style={divStyle} className={classes.CharacterCard}>
         <div style={picStyle} className={classes.CharacterCardContainer}>
           <span className={`is${props.status}`}></span>
-        <span  className={classes.CharacterPic}></span>
-        <h4>{props.name}</h4>
+          <span className={classes.CharacterPic}></span>
+          <h4>{props.name}</h4>
         </div>
       </article>
     </Link>
@@ -33,6 +33,6 @@ CharacterCard.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
   pic: PropTypes.string,
-  status: PropTypes.string
+  status: PropTypes.string,
 };
 export default CharacterCard;

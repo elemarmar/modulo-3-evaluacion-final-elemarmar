@@ -7,15 +7,13 @@ import Loader from '../../UI/Loader/Loader';
 import './status.css';
 import PropTypes from 'prop-types';
 
-
 const CharacterDetail = (props) => {
   const [foundCharacter, setFoundCharacter] = useState('');
 
   useEffect(() => {
-    Api.id(props.characterId)
-      .then((data) => {
-        setFoundCharacter(data);
-      })
+    Api.id(props.characterId).then((data) => {
+      setFoundCharacter(data);
+    });
   }, [props.characterId]);
 
   const renderCharacter = () => {
@@ -34,8 +32,8 @@ const CharacterDetail = (props) => {
                       className={classes.CharacterPic}
                       alt={foundCharacter.name}
                     ></img>
-                 <p className={`${classes.Status} ${foundCharacter.status}`}>
-                        {foundCharacter.status}
+                    <p className={`${classes.Status} ${foundCharacter.status}`}>
+                      {foundCharacter.status}
                     </p>
                     <div className={classes.CharacterName}>
                       <h4>{foundCharacter.name}</h4>
