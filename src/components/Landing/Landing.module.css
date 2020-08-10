@@ -8,17 +8,16 @@
 
 .Landing {
   background-image: url(../../assets/images/landing-background.png);
-  background-position: center 50px;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: fill;
   min-height: 100vh;
-  position: relative;
-}
+  position: relative;}
 
 .LandingTv {
   position: absolute;
   left: 50%;
-  top: 230px;
+  top: 305px;
   transform: translateX(-50%);
   height: 255px;
   width: 460px;

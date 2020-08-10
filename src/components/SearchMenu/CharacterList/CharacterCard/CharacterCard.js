@@ -9,7 +9,6 @@ const randomN = () => {
 
 const CharacterCard = (props) => {
   const divStyle = {
-
     animationDelay: randomN() + 's',
   };
 
@@ -31,6 +30,7 @@ const CharacterCard = (props) => {
 CharacterCard.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
-  pic: PropTypes.string
+  pic: PropTypes.string,
+  status: PropTypes.string
 };
 export default CharacterCard;

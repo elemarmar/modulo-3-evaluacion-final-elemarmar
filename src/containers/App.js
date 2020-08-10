@@ -150,7 +150,7 @@ const App = (props) => {
 
         <Link to='/'>
           <h1 className='Title'>
-            <img src={Title} />
+            <img src={Title} alt='Rick and Morty'/>
           </h1>
         </Link>
 

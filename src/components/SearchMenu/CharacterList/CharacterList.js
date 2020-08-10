@@ -33,6 +33,7 @@ const CharacterList = (props) => {
             key={character.id}
             id={character.id}
             name={character.name}
+            status={character.status}
             pic={character.image}
           />
         );

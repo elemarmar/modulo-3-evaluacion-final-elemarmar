@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.d5c5b674.chunk.css",
-    "main.js": "./static/js/main.783cf891.chunk.js",
-    "main.js.map": "./static/js/main.783cf891.chunk.js.map",
+    "main.css": "./static/css/main.4525297e.chunk.css",
+    "main.js": "./static/js/main.c7d5885c.chunk.js",
+    "main.js.map": "./static/js/main.c7d5885c.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.582643aa.js",
     "runtime-main.js.map": "./static/js/runtime-main.582643aa.js.map",
-    "static/js/2.14d9ecdd.chunk.js": "./static/js/2.14d9ecdd.chunk.js",
-    "static/js/2.14d9ecdd.chunk.js.map": "./static/js/2.14d9ecdd.chunk.js.map",
+    "static/js/2.e8954372.chunk.js": "./static/js/2.e8954372.chunk.js",
+    "static/js/2.e8954372.chunk.js.map": "./static/js/2.e8954372.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.e79bdff0e47650a8f7260c30f3996961.js": "./precache-manifest.e79bdff0e47650a8f7260c30f3996961.js",
+    "precache-manifest.1ba79ce81386ed7912b058f07903d70d.js": "./precache-manifest.1ba79ce81386ed7912b058f07903d70d.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.d5c5b674.chunk.css.map": "./static/css/main.d5c5b674.chunk.css.map",
-    "static/js/2.14d9ecdd.chunk.js.LICENSE.txt": "./static/js/2.14d9ecdd.chunk.js.LICENSE.txt",
+    "static/css/main.4525297e.chunk.css.map": "./static/css/main.4525297e.chunk.css.map",
+    "static/js/2.e8954372.chunk.js.LICENSE.txt": "./static/js/2.e8954372.chunk.js.LICENSE.txt",
     "static/media/Nav.module.css": "./static/media/season.676bad07.gif",
     "static/media/MissingPage.module.css": "./static/media/angry.5b0a33f6.gif",
     "static/media/author-portrait.png": "./static/media/author-portrait.64c3898a.png",
@@ -23,7 +23,7 @@
     "static/media/poster2.png": "./static/media/poster2.eadba6f6.png",
     "static/media/poster3.png": "./static/media/poster3.22a15ca7.png",
     "static/media/poster4.png": "./static/media/poster4.0d89ffd3.png",
-    "static/media/relaxed.gif": "./static/media/relaxed.57b39e28.gif",
+    "static/media/CharacterCard.module.css": "./static/media/relaxed.57b39e28.gif",
     "static/media/MissingCharacterByName.module.css": "./static/media/stupid.3de41dae.gif",
     "static/media/season1.mp4": "./static/media/season1.514deac9.mp4",
     "static/media/season2.mp4": "./static/media/season2.ca9d1ad4.mp4",
@@ -34,8 +34,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.582643aa.js",
-    "static/js/2.14d9ecdd.chunk.js",
-    "static/css/main.d5c5b674.chunk.css",
-    "static/js/main.783cf891.chunk.js"
+    "static/js/2.e8954372.chunk.js",
+    "static/css/main.4525297e.chunk.css",
+    "static/js/main.c7d5885c.chunk.js"
   ]
 }
