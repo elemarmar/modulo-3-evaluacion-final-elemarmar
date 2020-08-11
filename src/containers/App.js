@@ -109,18 +109,10 @@ const App = (props) => {
         .filter((character) => {
           if (seasonFilter === '4') {
             return true;
-          } else if (seasonFilter === '1') {
+          } else if (seasonFilter) {
             return character.episode
               .map((c) => c.slice(40))
-              .some((ep) => ep < episodeBreak.season1);
-          } else if (seasonFilter === '2') {
-            return character.episode
-              .map((c) => c.slice(40))
-              .some((ep) => ep < episodeBreak.season2);
-          } else if (seasonFilter === '3') {
-            return character.episode
-              .map((c) => c.slice(40))
-              .some((ep) => ep < episodeBreak.season3);
+              .some((ep) => ep < episodeBreak['season' + seasonFilter]);
           }
         });
     }

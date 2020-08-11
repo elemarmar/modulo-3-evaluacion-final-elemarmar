@@ -18,7 +18,7 @@
 .LandingTv {
   position: absolute;
   left: 50%;
-  top: 305px;
+  bottom: 280px;
   transform: translateX(-50%);
   height: 255px;
   width: 460px;
